@@ -1,0 +1,10 @@
+= About Enterprise Contract
+
+Enterprise Contract is a set of tools and policies that maintains the security
+of the software supply chain. Tools such as
+https://tekton.dev/docs/chains/[Tekton Chains] can produce a signed
+https://in-toto.io/in-toto/[in-toto] attestation of the software build process,
+a set of xref:ec-policies:ROOT:index.adoc[policies] attests that the process
+followed a perscribed set of best practices and organization's requirements that
+can be evaluated using the xref:ec-cli:ROOT:index.adoc[tools] to maintain the
+supply chain security.

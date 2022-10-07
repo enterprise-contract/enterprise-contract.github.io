@@ -1,0 +1,5 @@
+# Antora cache
+.cache
+# Rendered documentation output
+public
+node_modules

@@ -1,0 +1,42 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="{{or site.url (or siteRootUrl siteRootPath)}}">Enterprise Contract Documentation</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    {{#if env.SITE_SEARCH_PROVIDER}}
+    <div class="navbar-item search hide-for-print">
+      <div id="search-field" class="field">
+        <input id="search-input" type="text" placeholder="Search the docs"{{#if page.home}} autofocus{{/if}}>
+      </div>
+    </div>
+    {{/if}}
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="{{or site.url (or siteRootUrl siteRootPath)}}">Documentation</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec">Overview</a>
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-policies">Policies</a>
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-cli">Command line tool</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://gitlab.com/hacbs-contract">Source code</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://gitlab.com/hacbs-contract/ec-policies">Policies</a>
+            <a class="navbar-item" href="https://gitlab.com/hacbs-contract/ec-cli">Command line tool</a>
+            <a class="navbar-item" href="https://gitlab.com/hacbs-contract/enterprise-contract-controler">Kubernetes integration</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://issues.redhat.com/browse/HACBS">Issue Tracker</a>
+      </div>
+    </div>
+  </nav>
+</header>
