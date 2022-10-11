@@ -44,6 +44,10 @@ output:
   dir: ./public
 antora:
   extensions:
+# Order here determines the order of execution, this is important for the
+# reference-antora-extension that operates on the files produced by
+# collector-extension
+    - '@antora/collector-extension'
     - require: '@hacbs-contract/ec-policies-antora-extension'
     - require: '@hacbs-contract/reference-antora-extension'
     - '@antora/lunr-extension'
