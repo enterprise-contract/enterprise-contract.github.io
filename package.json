@@ -10,7 +10,7 @@
   "devDependencies": {
     "@hacbs-contract/ec-policies-antora-extension": "latest",
     "@hacbs-contract/reference-antora-extension": "latest",
-    "antora": "^3.1.1"
+    "antora": "^3.1.2"
   },
   "overrides": {
     "glob-parent": "6.0.2"
