@@ -8,3 +8,7 @@ a set of xref:ec-policies:ROOT:index.adoc[policies] attests that the process
 followed a perscribed set of best practices and organization's requirements that
 can be evaluated using the xref:ec-cli:ROOT:index.adoc[tools] to maintain the
 supply chain security.
+
+There's an additional overview of Enterprise Contract and its components in the
+https://redhat-appstudio.github.io/book/book/enterprise-contract.html[Book of
+AppStudio].
