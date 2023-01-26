@@ -1,5 +1,4 @@
-.About
-* xref:index.adoc[About Enterprise Contract]
-* xref:ecc:ROOT:index.adoc[About Enterprise Contract Policy Configuration]
-* xref:ec-policies:ROOT:index.adoc[About Enterprise Contract Policies]
-* xref:ec-cli:ROOT:index.adoc[About Enterprise Contract CLI]
+* xref:index.adoc[Overview]
+* xref:ec-cli:ROOT:index.adoc[EC CLI]
+* xref:ec-policies:ROOT:index.adoc[Policies]
+* xref:ecc:ROOT:index.adoc[Configuration]
