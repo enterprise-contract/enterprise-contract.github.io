@@ -1,14 +1,35 @@
 = About Enterprise Contract
 
-Enterprise Contract is a set of tools and policies that maintains the security
-of the software supply chain. Tools such as
-https://tekton.dev/docs/chains/[Tekton Chains] can produce a signed
-https://in-toto.io/in-toto/[in-toto] attestation of the software build process,
-a set of xref:ec-policies:ROOT:index.adoc[policies] attests that the process
-followed a perscribed set of best practices and organization's requirements that
-can be evaluated using the xref:ec-cli:ROOT:index.adoc[tools] to maintain the
-supply chain security.
+== Overview
+
+The Enterprise Contract is a set of tools for maintaining software supply chain
+security, and for the definition and enforcment of policies related to how
+container images are built and tested.
+
+Its main purpose is to verify the security and provenance of builds created by
+(codename) https://red-hat-stone-soup.pages.redhat.com/stonesoup-documentation/["Stonesoup"],
+a cloud based build and deployment system based on Tekton, Argo CD and
+OpenShift, currently under development by Red Hat.
+
+The Stonesoup build process uses https://tekton.dev/docs/chains/[Tekton Chains]
+to produce a signed https://in-toto.io/in-toto/[in-toto] attestation of the
+build pipeline. Enterprise Contract then uses that signed attestation to
+cryptographically verify that the build was not tampered with, and to check the
+build against a set of xref:ec-policies:ROOT:index.adoc[policies]. The policies
+attest that the build process followed a prescribed set of best practices, plus
+organization specific policies as required.
+
+== Components
+
+- *EC CLI* - Command line utility
+- *EC Task Definition* - A Tekton Task wrapper for the EC CLI
+- *EC Policy CRD* - Defines a Kubernetes CR for EC configuration
+- *EC Policies* - A set of policies defined in OPA/Rego
 
 There's an additional overview of Enterprise Contract and its components in the
 https://redhat-appstudio.github.io/book/book/enterprise-contract.html[Book of
-AppStudio].
+Stonesoup].
+
+== Code
+
+* https://github.com/hacbs-contract[github.com/hacbs-contract]
