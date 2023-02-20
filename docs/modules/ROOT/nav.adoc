@@ -2,3 +2,4 @@
 * xref:ec-cli:ROOT:index.adoc[EC CLI]
 * xref:ec-policies:ROOT:index.adoc[Policies]
 * xref:ecc:ROOT:index.adoc[Configuration]
+* xref:ec-cookbook:ROOT:index.adoc[Cookbook]
