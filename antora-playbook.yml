@@ -54,5 +54,6 @@ antora:
 # collector-extension
     - '@antora/collector-extension'
     - require: '@hacbs-contract/ec-policies-antora-extension'
+    - require: '@hacbs-contract/tekton-task-antora-extension'
     - require: '@hacbs-contract/reference-antora-extension'
     - '@antora/lunr-extension'
