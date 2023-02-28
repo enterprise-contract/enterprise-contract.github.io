@@ -38,7 +38,7 @@ content:
     - url: https://github.com/hacbs-contract/enterprise-contract-controller.git
       branches: main
       start_path: docs
-    - url: https://github.com/redhat-appstudio/ec-cookbook.git
+    - url: https://github.com/hacbs-contract/ec-cookbook.git
       branches: main
 ui:
   bundle:
