@@ -32,4 +32,4 @@ Stonesoup].
 
 == Code
 
-* https://github.com/hacbs-contract[github.com/hacbs-contract]
+* https://github.com/enterprise-contract[github.com/enterprise-contract]

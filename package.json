@@ -6,7 +6,7 @@
   "bugs": {
     "url": "https://issues.redhat.com/browse/HACBS"
   },
-  "homepage": "https://hacbs-contract.github.io/hacbs-contract.github.io/",
+  "homepage": "https://enterprise-contract.github.io/enterprise-contract.github.io/",
   "devDependencies": {
     "@hacbs-contract/ec-policies-antora-extension": "latest",
     "@hacbs-contract/reference-antora-extension": "latest",
