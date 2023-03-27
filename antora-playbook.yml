@@ -21,7 +21,7 @@ runtime:
     failure_level: warn
 site:
   title: Enterprise Contract
-  url: https://hacbs-contract.github.io/
+  url: https://enterprise-contract.github.io/
   start_page: ec::index.adoc
   robots: allow
 content:
@@ -29,16 +29,16 @@ content:
     - url: .
       start_path: docs
       branches: HEAD
-    - url: https://github.com/hacbs-contract/ec-policies.git
+    - url: https://github.com/enterprise-contract/ec-policies.git
       branches: main
       start_path: antora/docs
-    - url: https://github.com/hacbs-contract/ec-cli.git
+    - url: https://github.com/enterprise-contract/ec-cli.git
       branches: main
       start_path: docs
-    - url: https://github.com/hacbs-contract/enterprise-contract-controller.git
+    - url: https://github.com/enterprise-contract/enterprise-contract-controller.git
       branches: main
       start_path: docs
-    - url: https://github.com/hacbs-contract/ec-cookbook.git
+    - url: https://github.com/enterprise-contract/ec-cookbook.git
       branches: main
 ui:
   bundle:
