@@ -3,7 +3,7 @@
 == Overview
 
 The Enterprise Contract is a set of tools for maintaining software supply chain
-security, and for the definition and enforcment of policies related to how
+security, and for the definition and enforcement of policies related to how
 container images are built and tested.
 
 Its main purpose is to verify the security and provenance of builds created by
