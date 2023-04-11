@@ -17,3 +17,18 @@ copyright = "Red Hat, Inc. All rights reserved."
     # Disable Goldmark Chroma syntax highlighter
     codeFences = false
 
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  #[[menu.main]]
+  #  name = 'About'
+  #  pageRef = '/about'
+  #  weight = 20
+
+  [[menu.main]]
+    name = 'Documentation'
+    url = '/docs'
+    weight = 30
