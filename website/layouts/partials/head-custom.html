@@ -1,0 +1,53 @@
+<style type="text/css">
+{{/* Todo: Move this to a css file and have it minified and cache-busted etc */}}
+
+:root {
+  /* Blue/purple-ish instead of the default nearly-black */
+  --navbar-background: #200382;
+
+  /* Taller nav bar for the home page */
+  --navbar-height: 8rem;
+}
+
+.navbar-brand .navbar-item {
+  /* With the taller nav bar, I think the title looks better near the bottom */
+  margin-top: 4rem;
+}
+
+.navbar-brand .navbar-item:first-child {
+  /* Bigger */
+  font-size: 2rem;
+}
+
+.navbar-brand .navbar-burger {
+  /* Move burger menu down also */
+  margin-top: 5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  /* Position nav items lower instead of in the middle */
+    .navbar-end > a.navbar-item:not(.has-dropdown) {
+        align-items: flex-end;
+        padding-bottom: 0.7rem;
+    }
+
+  /* Remove the black hover color */
+  .navbar-end > a.navbar-item:hover {
+      background-color: transparent;
+  }
+}
+
+/* Antora style left menu that we don't need on the home page */
+.body > .nav-container,
+/* Antora style breadcrumb nav that we don't need on the home page */
+main .toolbar
+{
+    display: none !important;
+}
+
+main .content {
+    /* With the breadcrumb nav gone we need some extra spacing */
+    margin-top: 2rem;
+}
+
+</style>
