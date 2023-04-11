@@ -26,8 +26,8 @@ site:
   robots: allow
 content:
   sources:
-    - url: .
-      start_path: docs
+    - url: ../
+      start_path: antora/docs
       branches: HEAD
     - url: https://github.com/enterprise-contract/ec-policies.git
       branches: main
@@ -46,7 +46,7 @@ ui:
     snapshot: true
   supplemental_files: ./supplemental-ui
 output:
-  dir: ./public
+  dir: ../public/docs
 antora:
   extensions:
 # Order here determines the order of execution, this is important for the

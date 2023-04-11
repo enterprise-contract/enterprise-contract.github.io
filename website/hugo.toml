@@ -1,0 +1,19 @@
+baseURL = 'http://enterprise-contract.dev/'
+languageCode = 'en-us'
+title = 'Enterprise Contract'
+theme = 'antora-default-ui-hugo-theme'
+publishDir = '../public'
+copyright = "<name>. All rights reserved."
+
+[params]
+  since = 2023
+
+[markup]
+  [markup.asciidocext]
+    [markup.asciidocext.attributes]
+      "icons" = "font"
+      "source-highlighter" = "highlightjs"
+  [markup.highlight]
+    # Disable Goldmark Chroma syntax highlighter
+    codeFences = false
+
