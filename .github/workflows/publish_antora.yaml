@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-name: Publish website
+name: Publish Antora docs
 
 'on':
   push:
@@ -51,7 +51,7 @@ jobs:
           cache: true
 
       - name: Generate website
-        run: npm ci && npm run build
+        run: npm ci && npm --prefix antora run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
