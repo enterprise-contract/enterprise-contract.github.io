@@ -41,7 +41,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version-file: 'package.json'
+          node-version-file: 'antora/package.json'
           cache: 'npm'
 
       - name: Setup Go environment
