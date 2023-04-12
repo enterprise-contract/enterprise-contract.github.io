@@ -13,6 +13,6 @@ ROOT_DIR="$(dirname "${BASH_SOURCE[0]}")/.."
     trap exit SIGINT
     # shellcheck disable=SC2016,SC2046
     while true; do
-        find $(yq '.content.sources[].url | sub(".*/(.*)\.git", "../$1")' "${ROOT_DIR}/antora-playbook.yml") | entr -s 'echo Building ...; '"${ROOT_DIR}"/hack/local-build.sh'; echo Waiting for changes, press Ctrl+C to exit' || true
+        find $(yq '.content.sources[].url | sub(".*/(.*)\.git", "../../$1")' "${ROOT_DIR}/antora-playbook.yml") | entr -s 'echo Building ...; '"${ROOT_DIR}"/hack/local-build.sh'; echo Waiting for changes, press Ctrl+C to exit' || true
     done
 )
