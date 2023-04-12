@@ -29,9 +29,6 @@ name: Publish Antora docs
 jobs:
   antora:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 'antora'
     permissions:
       pages: write
       id-token: write
