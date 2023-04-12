@@ -46,6 +46,7 @@ jobs:
         with:
           node-version-file: 'antora/package.json'
           cache: 'npm'
+          cache-dependency-path: 'antora/package-lock.json'
 
       - name: Setup Go environment
         uses: actions/setup-go@v4
