@@ -15,9 +15,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-name: Publish Hugo website
+name: Publish website docs
 
-on:
+'on':
   push:
     branches:
       - main
@@ -43,8 +43,50 @@ defaults:
     shell: bash
 
 jobs:
-  build:
+  build-antora:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'antora/package.json'
+          cache: 'npm'
+          cache-dependency-path: 'antora/package-lock.json'
+
+      - name: Setup Go environment
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.19'
+          cache: true
+          cache-dependency-path: antora/go.sum
+
+      - name: Generate website
+        run: npm --prefix antora ci && npm --prefix antora run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Dir list
+        run: ls -R
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: './public/docs'
+          name: build-antora
+
+  build-hugo:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     env:
       HUGO_VERSION: 0.111.3
     steps:
@@ -75,10 +117,13 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Dir list
+        run: ls -R
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
-          path: ./public
+          path: public
+          name: build-hugo
 
   # Deployment job
   deploy:
@@ -86,8 +131,26 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build-hugo, build-antora]
     steps:
+      - name: Download hugo artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-hugo
+          path: '.'
+      - name: Dir list
+        run: ls -R
+      - name: Download antora artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-antora
+          path: './docs'
+      - name: Dir list
+        run: ls -R
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
