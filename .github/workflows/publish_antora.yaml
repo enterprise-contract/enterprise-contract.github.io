@@ -29,6 +29,9 @@ name: Publish Antora docs
 jobs:
   antora:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'antora'
     permissions:
       pages: write
       id-token: write
@@ -51,7 +54,7 @@ jobs:
           cache: true
 
       - name: Generate website
-        run: npm ci && npm --prefix antora run build
+        run: npm ci && npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
