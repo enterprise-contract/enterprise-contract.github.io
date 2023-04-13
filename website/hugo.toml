@@ -41,24 +41,24 @@ copyright = "Red Hat, Inc. All rights reserved."
   [[menu.main]]
     parent = 'Documentation'
     name = 'CLI Reference'
-    url = 'docs/ec-cli/main/ec_validate_image.html'
+    url = '/docs/ec-cli/main/ec_validate_image.html'
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'Tekton Tasks'
-    url = 'docs/ec-cli/main/verify-enterprise-contract.html'
+    url = '/docs/ec-cli/main/verify-enterprise-contract.html'
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'Configuration'
-    url = 'docs/ecc/main'
+    url = '/docs/ecc/main'
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'Policies'
-    url = 'docs/ec-policies/release_policy.html'
+    url = '/docs/ec-policies/release_policy.html'
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'User Guide'
-    url = 'docs/ec-cookbook/'
+    url = '/docs/ec-cookbook/main/'
