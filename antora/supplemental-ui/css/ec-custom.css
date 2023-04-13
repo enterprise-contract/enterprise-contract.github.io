@@ -39,6 +39,26 @@
     }
 }
 
+/* Search box tweaks */
+
+#search-input {
+    border-radius: 0.2em;
+}
+
+@media screen and (min-width: 1024px) {
+    #search-input {
+        font-size: 85%;
+        width: 8em;
+        margin-right: 0.3rem;
+    }
+
+    /* Widen the field when user is searching */
+    #search-input:focus {
+        width: 14em;
+        background-color: white;
+    }
+}
+
 /* For EC policy rule docs */
 
 .rule-type-indicator {
