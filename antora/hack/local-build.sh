@@ -12,7 +12,7 @@ PREVIEW_PLAYBOOK=$(mktemp preview.XXXXXXXXXX.yml)
 trap "rm -f ${PREVIEW_PLAYBOOK}" EXIT
 
 # shellcheck disable=SC2016
-for dir in $(yq '.content.sources[] | .url |= sub(".*/(.*)\.git", "../$1") | .url + "/" + .start_path' "${ROOT_DIR}/antora-playbook.yml"); do
+for dir in $(yq '.content.sources[] | .url |= sub(".*/(.*)\.git", "../../$1") | .url + "/" + .start_path' "${ROOT_DIR}/antora-playbook.yml"); do
     if [ ! -d "${dir}" ]; then
         echo "Directory ${dir} doesn't exist, either create a symlink from that location to the expected repository or locally modify antora-playbook.yml to point to it"
         exit 1
@@ -21,7 +21,7 @@ done
 
 cp "${ROOT_DIR}/antora-playbook.yml" "${PREVIEW_PLAYBOOK}"
 # shellcheck disable=SC2016
-yq e -i '.content.sources[].url |= sub(".*/(.*)\.git", "../$1") | .content.sources[].branches = "HEAD" | .' "${PREVIEW_PLAYBOOK}"
+yq e -i '.content.sources[].url |= sub(".*/(.*)\.git", "../../$1") | .content.sources[].branches = "HEAD" | .' "${PREVIEW_PLAYBOOK}"
 (
     cd "${ROOT_DIR}"
     npx antora generate --clean "${PREVIEW_PLAYBOOK}" --stacktrace

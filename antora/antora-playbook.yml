@@ -21,7 +21,7 @@ runtime:
     failure_level: warn
 site:
   title: Enterprise Contract
-  url: https://enterprise-contract.github.io/
+  url: https://enterprisecontract.dev/docs
   start_page: ec::index.adoc
   robots: allow
 content:

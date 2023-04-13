@@ -10,32 +10,60 @@
         <span></span>
       </button>
     </div>
-    {{#if env.SITE_SEARCH_PROVIDER}}
-    <div class="navbar-item search hide-for-print">
-      <div id="search-field" class="field">
-        <input id="search-input" type="text" placeholder="Search the docs"{{#if page.home}} autofocus{{/if}}>
-      </div>
-    </div>
-    {{/if}}
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="{{or site.url (or siteRootUrl siteRootPath)}}">Documentation</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec">Overview</a>
-            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-policies">Policies</a>
-            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-cli">Command line tool</a>
+        {{#if env.SITE_SEARCH_PROVIDER}}
+        <div class="navbar-item search hide-for-print">
+          <div id="search-field" class="field">
+            <input id="search-input" type="text" placeholder="Search..."{{#if page.home}} autofocus{{/if}}>
           </div>
         </div>
+        {{/if}}
+
+        {{! See also website/hugo.toml which should be kept in sync with the links here
+          TODO: DRY it up and generate the menus from a single source. }}
+
+        <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/../">Home</a>
+
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="https://gitlab.com/hacbs-contract">Source code</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://gitlab.com/hacbs-contract/ec-policies">Policies</a>
-            <a class="navbar-item" href="https://gitlab.com/hacbs-contract/ec-cli">Command line tool</a>
-            <a class="navbar-item" href="https://gitlab.com/hacbs-contract/enterprise-contract-controler">Kubernetes integration</a>
+
+          <span class="navbar-link">Documentation</span>
+          <div class="navbar-dropdown is-right">
+            {{! Todo: Maybe we can use #each site.components here }}
+
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/">Overview</a>
+
+            {{! Let's link to a deeper page for these instead of the default index. The left menu should provide easy access to the other sections. }}
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-cli/main/ec_validate_image.html">CLI Reference</a>
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-cli/main/verify-enterprise-contract.html">Tekton Tasks</a>
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ecc/main/">Configuration</a>
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-policies/release_policy.html">Policies</a>
+
+            {{! I want to rename the cookbook soon, perhaps to User Guide, so let's try using that title }}
+            <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-cookbook/">User Guide</a>
+
+            {{! Coming soon... }}
+            {{!-- <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/ec-cookbook/slsa">SLSA Guide</a> --}}
+
           </div>
         </div>
-        <a class="navbar-item" href="https://issues.redhat.com/browse/HACBS">Issue Tracker</a>
+
+        {{!--
+          This is a little undercooked. Let's comment it out for now and come back to it later.
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <span class="navbar-link">More</span>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" target="_blank" href="https://github.com/enterprise-contract/">Source Code</a>
+            <a class="navbar-item" target="_blank" href="https://issues.redhat.com/issues/?jql=project%20%3D%20HACBS%20and%20labels%20%3D%20Contract">Issue Tracker</a>
+            {{! This is RH internal, so maybe it's not a good idea to link it }}
+            <a class="navbar-item" target="_blank" href="https://redhat-internal.slack.com/archives/C031J4KBFME">Slack Channel</a>
+            {{! More later maybe }}
+          </div>
+        </div>
+
+        --}}
+
       </div>
     </div>
   </nav>
