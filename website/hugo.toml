@@ -35,30 +35,40 @@ copyright = "Red Hat, Inc. All rights reserved."
 
   [[menu.main]]
     name = 'Documentation'
-    url = '/docs'
     weight = 30
+
+  [[menu.main]]
+    parent = 'Documentation'
+    name = 'Overview'
+    url = '/docs/ec/main'
+    weight = 10
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'CLI Reference'
     url = '/docs/ec-cli/main/ec_validate_image.html'
+    weight = 20
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'Tekton Tasks'
     url = '/docs/ec-cli/main/verify-enterprise-contract.html'
+    weight = 30
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'Configuration'
     url = '/docs/ecc/main'
+    weight = 40
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'Policies'
     url = '/docs/ec-policies/release_policy.html'
+    weight = 60
 
   [[menu.main]]
     parent = 'Documentation'
     name = 'User Guide'
-    url = '/docs/ec-cookbook/main/'
+    url = '/docs/ec-cookbook/main'
+    weight = 70
