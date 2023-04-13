@@ -18,6 +18,11 @@ copyright = "Red Hat, Inc. All rights reserved."
     codeFences = false
 
 [menu]
+  #
+  # See also antora/supplemental-ui/partials/header-content.hbs
+  # The links there should be kept in sync with these links.
+  # TODO: DRY it up and generate the menus from a single source.
+  #
   [[menu.main]]
     name = 'Home'
     pageRef = '/'
@@ -32,3 +37,28 @@ copyright = "Red Hat, Inc. All rights reserved."
     name = 'Documentation'
     url = '/docs'
     weight = 30
+
+  [[menu.main]]
+    parent = 'Documentation'
+    name = 'CLI Reference'
+    url = 'docs/ec-cli/main/ec_validate_image.html'
+
+  [[menu.main]]
+    parent = 'Documentation'
+    name = 'Tekton Tasks'
+    url = 'docs/ec-cli/main/verify-enterprise-contract.html'
+
+  [[menu.main]]
+    parent = 'Documentation'
+    name = 'Configuration'
+    url = 'docs/ecc/main'
+
+  [[menu.main]]
+    parent = 'Documentation'
+    name = 'Policies'
+    url = 'docs/ec-policies/release_policy.html'
+
+  [[menu.main]]
+    parent = 'Documentation'
+    name = 'User Guide'
+    url = 'docs/ec-cookbook/'
