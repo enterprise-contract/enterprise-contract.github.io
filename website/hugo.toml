@@ -1,7 +1,7 @@
 baseURL = 'https://enterprise-contract.dev/'
 languageCode = 'en-us'
 title = 'Enterprise Contract'
-theme = 'antora-default-ui-hugo-theme'
+theme = 'github.com/basil/antora-default-ui-hugo-theme'
 publishDir = '../public'
 copyright = "Red Hat, Inc. All rights reserved."
 
@@ -72,3 +72,7 @@ copyright = "Red Hat, Inc. All rights reserved."
     name = 'User Guide'
     url = '/docs/ec-cookbook/main'
     weight = 70
+
+[module]
+[[module.imports]]
+  path = 'github.com/basil/antora-default-ui-hugo-theme'
