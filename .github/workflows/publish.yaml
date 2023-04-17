@@ -65,7 +65,7 @@ jobs:
       - name: Setup Go environment
         uses: actions/setup-go@v4
         with:
-          go-version: '1.19'
+          go-version-file: antora/go.mod
           cache: true
           cache-dependency-path: antora/go.sum
 
@@ -98,9 +98,12 @@ jobs:
         run: sudo snap install dart-sass-embedded
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Setup Go environment
+        uses: actions/setup-go@v4
         with:
-          submodules: recursive
-          fetch-depth: 0
+          go-version-file: website/go.mod
+          cache: true
+          cache-dependency-path: website/go.sum
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
