@@ -53,7 +53,7 @@ antora:
 # reference-antora-extension that operates on the files produced by
 # collector-extension
     - '@antora/collector-extension'
-    - require: '@hacbs-contract/ec-policies-antora-extension'
-    - require: '@hacbs-contract/tekton-task-antora-extension'
-    - require: '@hacbs-contract/reference-antora-extension'
+    - require: '@enterprise-contract/ec-policies-antora-extension'
+    - require: '@enterprise-contract/tekton-task-antora-extension'
+    - require: '@enterprise-contract/reference-antora-extension'
     - '@antora/lunr-extension'
