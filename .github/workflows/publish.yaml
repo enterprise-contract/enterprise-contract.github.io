@@ -62,7 +62,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-antora
-          path: './docs'
+          path: '.'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

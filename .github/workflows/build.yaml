@@ -19,6 +19,9 @@ name: Build
 
 'on':
   workflow_call:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build-antora:
@@ -47,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          path: './public/docs'
+          path: public
           name: build-antora
 
   build-hugo:
@@ -85,3 +88,17 @@ jobs:
         with:
           path: public
           name: build-hugo
+
+  pull-request-data:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Create pull request data
+        run: |
+          mkdir pull_request
+          echo ${{ github.event.pull_request.number }} > ./pull_request/number
+      - name: Upload pull request data
+        uses: actions/upload-artifact@v3
+        with:
+          path: .
+          name: pull-request-data
