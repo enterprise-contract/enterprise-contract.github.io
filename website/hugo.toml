@@ -28,6 +28,11 @@ copyright = "Red Hat, Inc. All rights reserved."
     pageRef = '/'
     weight = 10
 
+  [[menu.main]]
+    name = 'Source Code'
+    url = 'https://github.com/enterprise-contract'
+    weight = 12
+
   #[[menu.main]]
   #  name = 'About'
   #  pageRef = '/about'
