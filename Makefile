@@ -17,7 +17,10 @@ antora-local-live: ## Live build antora docs your locally checked out git repos
 	@cd antora && hack/local-live.sh
 
 build-antora: ## Build antora docs
-	@cd antora && npm run build
+	@cd antora && npm ci && npm run build
+
+build-antora-fast: ## Build antora docs without re-fetching sources
+	@cd antora && npm run build:fast
 
 # Fixme: Not sure how to make the stylesheet and javascript urls work
 PWD=$(shell pwd)

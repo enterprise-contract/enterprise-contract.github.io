@@ -17,7 +17,9 @@
     "glob-parent": "6.0.2"
   },
   "scripts": {
-    "build": "antora generate --clean --fetch antora-playbook.yml"
+    "build:base": "antora generate antora-playbook.yml",
+    "build": "npm run build:base -- --clean --fetch",
+    "build:fast": "npm run build:base"
   },
   "engines": {
     "node": "18"
