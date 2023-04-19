@@ -25,7 +25,7 @@ name: Preview website
 
 defaults:
   run:
-    shell: bash -o errexit -o pipefail -o nounset -o errtrace
+    shell: bash -o errexit -o pipefail -o nounset -o errtrace {0}
 
 jobs:
   preview:
