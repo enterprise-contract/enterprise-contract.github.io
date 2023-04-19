@@ -1,0 +1,104 @@
+# Copyright 2023 Red Hat, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+name: Build
+
+'on':
+  workflow_call:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-antora:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'antora/package.json'
+          cache: 'npm'
+          cache-dependency-path: 'antora/package-lock.json'
+
+      - name: Setup Go environment
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: antora/go.mod
+          cache: true
+          cache-dependency-path: antora/go.sum
+
+      - name: Generate website
+        run: npm --prefix antora ci && npm --prefix antora run build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: public
+          name: build-antora
+
+  build-hugo:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.111.3
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass Embedded
+        run: sudo snap install dart-sass-embedded
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Go environment
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: website/go.mod
+          cache: true
+          cache-dependency-path: website/go.sum
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --source website \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: public
+          name: build-hugo
+
+  pull-request-data:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Create pull request data
+        run: |
+          mkdir pull_request
+          echo ${{ github.event.pull_request.number }} > ./pull_request/number
+      - name: Upload pull request data
+        uses: actions/upload-artifact@v3
+        with:
+          path: .
+          name: pull-request-data

@@ -9,6 +9,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/antora"
+    schedule:
+      interval: "daily"
   - package-ecosystem: "gomod"
     directory: "/website"
     schedule:
