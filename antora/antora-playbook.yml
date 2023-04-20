@@ -57,3 +57,4 @@ antora:
     - require: '@enterprise-contract/tekton-task-antora-extension'
     - require: '@enterprise-contract/reference-antora-extension'
     - '@antora/lunr-extension'
+    - require: './extensions/zoom.js'
