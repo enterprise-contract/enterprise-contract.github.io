@@ -25,8 +25,6 @@
 
         <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}/../">Home</a>
 
-        <a class="navbar-item" target="_blank" href="https://github.com/enterprise-contract">Source Code</a>
-
         <div class="navbar-item has-dropdown is-hoverable">
 
           <span class="navbar-link">Documentation</span>
@@ -55,7 +53,7 @@
 
         <div class="navbar-item has-dropdown is-hoverable">
           <span class="navbar-link">More</span>
-          <div class="navbar-dropdown is-right">
+          <div class="navbar-dropdown">
             <a class="navbar-item" target="_blank" href="https://github.com/enterprise-contract/">Source Code</a>
             <a class="navbar-item" target="_blank" href="https://issues.redhat.com/issues/?jql=project%20%3D%20HACBS%20and%20labels%20%3D%20Contract">Issue Tracker</a>
             {{! This is RH internal, so maybe it's not a good idea to link it }}
@@ -65,6 +63,8 @@
         </div>
 
         --}}
+
+        <a class="navbar-item" href="https://github.com/enterprise-contract" title="Source Code">{{> github-icon-svg }}</a>
 
       </div>
     </div>
