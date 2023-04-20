@@ -75,3 +75,31 @@
 .rule-type-indicator.failure {
     background-color: var(--important-color);
 }
+
+.imageblock {
+    cursor: zoom-in;
+}
+
+.zoom .imageblock {
+    display: none;
+    position: fixed;
+    margin-top: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+    outline: none;
+}
+
+.zoom.shown .imageblock {
+    cursor: zoom-out;
+    display: flex;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom.shown .imageblock .title {
+    color: white;
+}
