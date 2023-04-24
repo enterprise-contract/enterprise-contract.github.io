@@ -5,8 +5,11 @@
  * Todo: DRY this up so we aren't maintaining it twice */
 
 :root {
-    /* Blue/purple-ish instead of the default nearly-black */
-    --navbar-background: #200382;
+    /* Blurple */
+    --navbar-font-color: #200382;
+
+    /* Instead of the default nearly-black */
+    --navbar-background: white;
 
     /* A lighter blurple */
     --navbar_hover-background: #3d16cb;
@@ -23,6 +26,10 @@
      * this looks better than the text cursor */
     .navbar-end span.navbar-link {
       cursor: default;
+    }
+
+    .navbar-end > a.navbar-item:hover, .navbar-item.has-dropdown:hover .navbar-link {
+        color: white;
     }
 }
 
