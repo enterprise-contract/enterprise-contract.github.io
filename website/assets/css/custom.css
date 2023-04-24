@@ -6,7 +6,8 @@
 
 :root {
     /* Blue/purple-ish instead of the default nearly-black */
-    --navbar-background: #200382;
+    --navbar-font-color: #200382;
+    --navbar-background: white;
 
     /* A lighter blurple */
     --navbar_hover-background: #3d16cb;
@@ -63,6 +64,18 @@
 .navbar-item:last-child .navbar-dropdown {
   left: auto;
   right: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar-end > a.navbar-item:hover, .navbar-item.has-dropdown:hover .navbar-link {
+        color: white;
+    }
+}
+
+/* center the main content horizontally */
+.body {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* expand in the vertical space between header and footer, move footer below the
