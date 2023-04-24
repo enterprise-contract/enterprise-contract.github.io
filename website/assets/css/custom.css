@@ -84,9 +84,35 @@ main .content {
     margin-top: 2rem;
 }
 
-article.doc p {
+.doc p {
   /* More space between paragraphs in Markdown output */
   padding-top: 1.5em;
+}
+
+/* For code blocks in blog posts */
+.doc pre {
+  /* Make it look like a terminal instead of default black on white */
+  color: var(--color-gray-10);
+  background-color: var(--color-jet-50);
+
+  /* Add some extra spacing */
+  padding: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+  border-radius: 0.25em;
+  font-size: 85%;
+
+  /* Use scrollbars for long lines */
+  overflow: auto;
+}
+
+/* For inline monospace text */
+.doc p > code {
+  /* Add a contrast bg */
+  background-color: var(--color-smoke-70);
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  font-size: 90%;
 }
 
 footer.footer {
