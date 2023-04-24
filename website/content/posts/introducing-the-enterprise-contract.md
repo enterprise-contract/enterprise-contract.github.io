@@ -8,6 +8,8 @@ verification tool, [cosign](https://docs.sigstore.dev/cosign/overview/). This bl
 policy-driven workflow, [Enterprise Contract](https://enterprisecontract.dev/docs/ec/main/index.html),
 built on those technologies.
 
+<!--more-->
+
 ## Before starting…
 
 Let’s say you have an image, `quay.io/lucarval/demo:ec`, and you want to verify this image was signed
