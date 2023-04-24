@@ -11,6 +11,8 @@
     /* A lighter blurple */
     --navbar_hover-background: #3d16cb;
 
+    --footer-background: var(--color-smoke-50);
+
     /* Override the overrides.. */
     --highlightjs-bg: #011627;
 }
