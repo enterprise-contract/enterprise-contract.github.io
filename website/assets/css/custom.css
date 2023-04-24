@@ -65,19 +65,14 @@
   right: 0;
 }
 
-@media screen and (min-width: 1024px) {
-    /* Also move nav items lower instead of in the middle */
-    .navbar-end > a.navbar-item:not(.has-dropdown) {
-        align-items: flex-end;
-        padding-bottom: 0.7rem;
-        margin-top: 5rem;
-    }
-
-    .navbar-end .has-dropdown .navbar-link {
-        align-items: flex-end;
-        padding-bottom: 0.7rem;
-        margin-top: 5rem;
-    }
+/* expand in the vertical space between header and footer, move footer below the
+ * fold
+ */
+body.article {
+    display: grid;
+    align-items: stretch;
+    height: 100%;
+    grid-template-rows: min-content auto 0;
 }
 
 /* Antora style left menu that we don't need on the home page
