@@ -11,6 +11,9 @@
     /* A lighter blurple */
     --navbar_hover-background: #3d16cb;
 
+    /* Lighter footer */
+    --footer-background: #f5f5f5;
+
     /* Override the overrides.. */
     --highlightjs-bg: #011627;
 }
