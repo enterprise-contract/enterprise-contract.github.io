@@ -137,3 +137,48 @@ footer.footer {
   /* Cosmetic tweak so the footer color continues to the bottom for short pages */
   padding-bottom: 15em;
 }
+
+#circle1 {
+    position: fixed;
+    width: 50vw;
+    height: 50vw;
+    z-index: 1000;
+    right: -25vw;
+    top: -25vw;
+    pointer-events: none;
+    border: .15vw dashed var(--navbar-font-color);
+    border-radius: 50%;
+    animation: rotate 180s;
+}
+
+#circle2 {
+    position: fixed;
+    width: 40vw;
+    height: 45vw;
+    z-index: 1000;
+    right: -12vw;
+    top: -25vw;
+    pointer-events: none;
+    border: .15vw dashed #d3c7fb;
+    border-radius: 50%;
+    animation: rotate 180s;
+}
+
+#circle3 {
+    position: fixed;
+    width: 35vw;
+    height: 40vw;
+    z-index: 1000;
+    right: -3vw;
+    top: -24vw;
+    pointer-events: none;
+    border: .15vw dashed #28bddf;
+    border-radius: 50%;
+    animation: rotate 180s;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
