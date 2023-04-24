@@ -89,6 +89,11 @@ main .content {
   padding-top: 1.5em;
 }
 
+.paragraph p {
+  /* ...but not inside a div.paragraph... */
+  padding-top: 0;
+}
+
 /* For code blocks in blog posts */
 .doc pre {
   /* Make it look like a terminal instead of default black on white */
