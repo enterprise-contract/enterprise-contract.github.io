@@ -4,6 +4,7 @@ title = 'Enterprise Contract'
 theme = 'github.com/basil/antora-default-ui-hugo-theme'
 publishDir = '../public'
 copyright = "Red Hat, Inc. All rights reserved."
+relativeURLs = true
 
 [params]
   since = 2023
