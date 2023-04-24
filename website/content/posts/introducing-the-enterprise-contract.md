@@ -5,7 +5,7 @@ date: 2023-04-24T12:56:35-04:00
 
 You may have heard of [sigstore](https://www.sigstore.dev/how-it-works) and its container image
 verification tool, [cosign](https://docs.sigstore.dev/cosign/overview/). This blog post introduces a
-policy-driven workflow, [Enterprise Contract](https://enterprisecontract.dev/ec/main/index.html),
+policy-driven workflow, [Enterprise Contract](https://enterprisecontract.dev/docs/ec/main/index.html),
 built on those technologies.
 
 ## Before starting…
@@ -162,15 +162,15 @@ rekorUrl: ""
 ```
 
 The sources attribute specifies a list of rego policy rules and corresponding [data
-sources](https://enterprisecontract.dev/ec-cli/main/configuration.html#_data_sources). Each data and
+sources](https://enterprisecontract.dev/docs/ec-cli/main/configuration.html#_data_sources). Each data and
 policy source can be specified via a different set of transports. Here we choose to use them
 directly from git.
 
 In configuration, we specify what to include from the sources. (Omit this to include all!) In this
 example, the policy rules from the
-[slsa_source_version_controlled](https://enterprisecontract.dev/ec-policies/release_policy.html#slsa_source_version_controlled_package)
+[slsa_source_version_controlled](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa_source_version_controlled_package)
 package are included. Check out the
-[docs](https://enterprisecontract.dev/ec-cli/main/configuration.html) for more information.
+[docs](https://enterprisecontract.dev/docs/ec-cli/main/configuration.html) for more information.
 
 We can also specify the public key and rekor URL directly in this file. This helps consolidate all
 the input parameters required for validating images.
@@ -295,5 +295,6 @@ As the Enterprise Contract continues to be actively worked on, and used to meet 
 plan on improving it even more. An important feature currently being worked on is support for
 keyless workflows which will increase the number of supported use cases.
 
-If you want to learn more, check out our [docs](https://enterprisecontract.dev/ec/main/index.html)
-and browse [the source](https://github.com/enterprise-contract)!
+If you want to learn more, check out our
+[docs](https://enterprisecontract.dev/docs/ec/main/index.html) and browse [the
+source](https://github.com/enterprise-contract)!
