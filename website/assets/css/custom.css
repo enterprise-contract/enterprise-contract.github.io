@@ -20,6 +20,8 @@
 
     /* Override the overrides.. */
     --highlightjs-bg: #011627;
+
+    --footer-background: var(--color-smoke-50);
 }
 
 @media screen and (min-width: 1024px) {
