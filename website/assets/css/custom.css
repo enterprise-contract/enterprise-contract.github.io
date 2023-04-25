@@ -24,47 +24,12 @@
 
 /* Hugo specific CSS */
 
-:root {
-    /* Taller nav bar for the home page */
-    --navbar-height: 8rem;
-}
-
-.navbar-brand .navbar-item {
-    /* With the taller nav bar the title looks better near
-     * the bottom instead of in the middle */
-    margin-top: 4.5rem;
-}
-
-.navbar-brand .navbar-burger {
-    /* Move the burger menu down also */
-    margin-top: 5rem;
-}
-
-.navbar-brand .navbar-item:first-child {
-    /* A little bigger */
-    font-size: 2rem;
-}
 
 /* Simulate the "is-right" class from the antora default ui
  * on the right-most dropdown menu */
 .navbar-item:last-child .navbar-dropdown {
   left: auto;
   right: 0;
-}
-
-@media screen and (min-width: 1024px) {
-    /* Also move nav items lower instead of in the middle */
-    .navbar-end > a.navbar-item:not(.has-dropdown) {
-        align-items: flex-end;
-        padding-bottom: 0.7rem;
-        margin-top: 5rem;
-    }
-
-    .navbar-end .has-dropdown .navbar-link {
-        align-items: flex-end;
-        padding-bottom: 0.7rem;
-        margin-top: 5rem;
-    }
 }
 
 /* Antora style left menu that we don't need on the home page
