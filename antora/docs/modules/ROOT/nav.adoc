@@ -3,4 +3,4 @@
 * xref:ec-cli:ROOT:verify-enterprise-contract.adoc[Tekton Tasks]
 * xref:ecc:ROOT:index.adoc[Configuration]
 * xref:ec-policies:ROOT:release_policy.adoc[Policies]
-* xref:ec-cookbook:ROOT:index.adoc[User Guide]
+* xref:user-guide:ROOT:index.adoc[User Guide]
