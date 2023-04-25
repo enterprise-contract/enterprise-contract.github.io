@@ -53,6 +53,11 @@
   right: 0;
 }
 
+.body {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* expand in the vertical space between header and footer, move footer below the
  * fold
  */
