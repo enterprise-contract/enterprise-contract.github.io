@@ -37,11 +37,8 @@
 }
 
 .hljs {
-    background-color: var(--highlightjs-bg) !important;
-    border-radius: 0.25em !important;
     font-size: 90% !important;
     line-height: 1.8em !important;
-    padding: 1em !important;
 }
 
 /* ************************************************* */
@@ -103,36 +100,32 @@ main .content {
 }
 
 .doc pre.highlightjs {
+    background-color: var(--highlightjs-bg) !important;
+    border-radius: 0.25em !important;
     font-size: 85%;
-    padding-top: 0.75em;
+    margin: 1rem 0 0 0;
 }
 
 .doc pre.highlightjs code {
     line-height: 1.8em;
-}
-
-code .command {
-    font-weight: bold;
-    color: gold;
+    padding: 0.5rem 0.5rem 0 0.5rem;
 }
 
 .doc pre::before {
     content: '⬤ ⬤ ⬤';
     color: transparent;
-    padding: 0 0 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
     cursor: default;
     display: block;
     background: linear-gradient(90deg, #fc615b 0%, #fc615b 34%, #febb2a 34%, #febb2a 67%, #2f8024 67%, #2f8024 100%);
     background-clip: text;
-    background-size: 4rem 1rem;
+    background-size: 5rem 1rem;
 }
 
 /* For inline monospace text */
 .doc p > code {
   /* Add a contrast bg */
   background-color: var(--color-smoke-70);
-  padding-left: 0.25em;
-  padding-right: 0.25em;
   font-size: 90%;
 }
 

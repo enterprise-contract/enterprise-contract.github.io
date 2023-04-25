@@ -6,8 +6,8 @@ The Enterprise Contract is a set of tools for maintaining software supply chain
 security, and for the definition and enforcement of policies related to how
 container images are built and tested.
 
-```
-$ {{<rawhtml>}}<span class="command">ec validate image --image quay.io/redhat-appstudio/ec-golden-image --output summary</span>{{</rawhtml>}}
+{{<code bash>}}
+$ ec validate image --image quay.io/redhat-appstudio/ec-golden-image --output summary
 components:
   - name: golden-container
     success: true
@@ -29,6 +29,6 @@ key: |
   MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZP/0htjhVt2y0ohjgtIIgICOtQtA
   naYJRuLprwIv6FDhZ5yFjYUEtsmoNcW7rx2KM6FOXGsCX3BNc7qhHELT+g==
   -----END PUBLIC KEY-----
-```
+{{</code>}}
 
 ### [View the documentation](./docs/index.html){.button}
