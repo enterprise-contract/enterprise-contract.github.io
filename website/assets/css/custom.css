@@ -53,6 +53,16 @@
   right: 0;
 }
 
+/* expand in the vertical space between header and footer, move footer below the
+ * fold
+ */
+ body.article {
+    display: grid;
+    align-items: stretch;
+    height: 100%;
+    grid-template-rows: min-content auto 0;
+}
+
 /* Antora style left menu that we don't need on the home page
  * Todo: Customize the layout to remove it properly */
 .body > .nav-container {
