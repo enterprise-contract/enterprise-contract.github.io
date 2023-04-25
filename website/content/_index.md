@@ -31,6 +31,4 @@ key: |
   -----END PUBLIC KEY-----
 ```
 
-{{<rawhtml>}}
-<a href="./docs/index.html"><button>View the documentation</button></a>
-{{</rawhtml>}}
+### [View the documentation](./docs/index.html){.button}
