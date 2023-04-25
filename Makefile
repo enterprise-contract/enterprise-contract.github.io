@@ -29,3 +29,9 @@ build-hugo: hugo-theme ## Build hugo docs
 	@echo file://$(PWD)/public/index.html
 
 build-all: build-hugo build-antora
+
+ifndef THEME_NAME
+THEME_NAME=night-owl
+endif
+download-highlight-js-theme:
+	curl -s https://highlightjs.org/static/demo/styles/$(THEME_NAME).css > common/css/highlightjs-theme.css

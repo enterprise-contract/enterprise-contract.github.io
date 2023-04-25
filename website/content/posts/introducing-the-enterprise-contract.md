@@ -23,16 +23,16 @@ ensures the same image is being verified across all steps preventing
 tools that can do this. I’ll use [skopeo](https://github.com/containers/skopeo) since I’m familiar
 with it:
 
-```text
+{{<code bash>}}
 $ skopeo inspect --no-tags docker://quay.io/lucarval/demo:ec | jq '.Digest'
 "sha256:304040ca1911aa4d911bd7c6d6d07193c57dc49dbc43e63828b42ab204fb1b25"
-```
+{{</code>}}
 
 Store the “pinned” image reference in the `IMAGE` environment variable:
 
-```text
+{{<code bash>}}
 IMAGE='quay.io/lucarval/demo:ec@sha256:304040ca1911aa4d911bd7c6d6d07193c57dc49dbc43e63828b42ab204fb1b25'
-```
+{{</code>}}
 
 (You may choose to keep the tag in the image reference as well. When both the tag and the digest are
 present, the digest should be used by clients.)
@@ -41,12 +41,12 @@ For the purpose of this blog post, it is assumed that the image has been signed 
 long-lived key instead of using the [keyless](https://docs.sigstore.dev/cosign/keyless/) workflow.
 The public key is:
 
-```text
+{{<code plaintext>}}
 -----BEGIN PUBLIC KEY-----
 MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZP/0htjhVt2y0ohjgtIIgICOtQtA
 naYJRuLprwIv6FDhZ5yFjYUEtsmoNcW7rx2KM6FOXGsCX3BNc7qhHELT+g==
 -----END PUBLIC KEY-----
-```
+{{</code>}}
 
 Let’s save that into a file called `cosign.pub`.
 
@@ -59,7 +59,7 @@ We first verify the image has been signed with the expected public key. The buil
 this image does not integrate with [Rekor](https://docs.sigstore.dev/rekor/overview/) yet, so we
 need to skip the transparency log checks.
 
-```text
+{{<code plaintext>}}
 $ cosign verify --key cosign.pub $IMAGE --insecure-ignore-tlog
 
 Verification for quay.io/lucarval/demo@sha256:304040ca1911aa4d911bd7c6d6d07193c57dc49dbc43e63828b42ab204fb1b25 --
@@ -67,7 +67,7 @@ The following checks were performed on each of these signatures:
   - The cosign claims were validated
   - The signatures were verified against the specified public key
 […]
-```
+{{</code>}}
 
 Great, this tells us that the image was indeed built by the expected build system because the image
 signature matches the provided public key.
@@ -75,7 +75,7 @@ signature matches the provided public key.
 Next, we verify the image contains the expected [SLSA Provenance](https://slsa.dev/provenance/v0.2)
 attestation.
 
-```text
+{{<code plaintext>}}
 $ cosign verify-attestation --type slsaprovenance --key cosign.pub $IMAGE --insecure-ignore-tlog
 
 Verification for quay.io/lucarval/demo@sha256:304040ca1911aa4d911bd7c6d6d07193c57dc49dbc43e63828b42ab204fb1b25 --
@@ -83,7 +83,7 @@ The following checks were performed on each of these signatures:
   - The cosign claims were validated
   - The signatures were verified against the specified public key
 […]
-```
+{{</code>}}
 
 The SLSA Provenance contains a lot of useful information about the build process. The cosign
 verify-attestation command does offer some support for evaluating its contents with a policy engine.
@@ -103,7 +103,7 @@ The Enterprise Contract can be evaluated via the
 [ec-cli](https://github.com/enterprise-contract/ec-cli). The simplest example involves using an
 empty policy:
 
-```text
+{{<code yaml>}}
 $ ec validate image --policy '' --rekor-url '' --public-key cosign.pub --image $IMAGE --output yaml
 
 components:
@@ -132,7 +132,7 @@ key: |
 policy:
   publicKey: cosign.pub
 success: true
-```
+{{</code>}}
 
 The ec-cli has different output formats. I chose the one that displays the full report in YAML
 format. From its success, we can tell that the image signature and the image attestations match the
@@ -144,7 +144,7 @@ repo has a set of useful rego policies, so let’s use that.
 
 Create a policy file called `policy.yaml` with the following content:
 
-```yaml
+{{<code yaml>}}
 sources:
 - name: policies
   data:
@@ -161,7 +161,7 @@ publicKey: |
   naYJRuLprwIv6FDhZ5yFjYUEtsmoNcW7rx2KM6FOXGsCX3BNc7qhHELT+g==
   -----END PUBLIC KEY-----
 rekorUrl: ""
-```
+{{</code>}}
 
 The sources attribute specifies a list of rego policy rules and corresponding [data
 sources](https://enterprisecontract.dev/docs/ec-cli/main/configuration.html#_data_sources). Each data and
@@ -179,13 +179,13 @@ the input parameters required for validating images.
 
 Let’s run the ec-cli again with this policy in place:
 
-```text
+{{<code bash>}}
 ec validate image --policy policy.yaml --image $IMAGE --output yaml --info
-```
+{{</code>}}
 
 which resuts in:
 
-```yaml
+{{<code yaml>}}
 components:
 - containerImage: quay.io/lucarval/demo@sha256:304040ca1911aa4d911bd7c6d6d07193c57dc49dbc43e63828b42ab204fb1b25
   name: Unnamed
@@ -257,7 +257,7 @@ policy:
     - git::github.com/enterprise-contract/ec-policies.git//policy/lib?ref=bca7d72
     - git::github.com/enterprise-contract/ec-policies.git//policy/release?ref=bca7d72
 success: true
-```
+{{</code>}}
 
 Notice the additional information in the output. It contains a list of policy rules that were
 successfully evaluated as well as the details for the policy used.
@@ -270,18 +270,18 @@ custom resource, see
 Say now that you have a group of images, an “application snapshot”, that must all pass validation.
 We can do this in one shot by creating the components.yaml file:
 
-```yaml
+{{<code yaml>}}
 components:
   - containerImage: quay.io/example/one:latest@sha256:...
   - containerImage: quay.io/example/two:latest@sha256:...
   - containerImage: quay.io/example/three:latest@sha256:...
-```
+{{</code>}}
 
 Then run the ec-cli:
 
-```text
+{{<code bash>}}
 ec validate image --policy policy.yaml --file-path components.yaml --output yaml
-```
+{{</code>}}
 
 The output of this command is a full report that includes the evaluation results of each image, as
 well as whether all the images pass the validation.
