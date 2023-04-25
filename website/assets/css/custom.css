@@ -5,11 +5,18 @@
  * Todo: DRY this up so we aren't maintaining it twice */
 
 :root {
-    /* Blue/purple-ish instead of the default nearly-black */
-    --navbar-background: #200382;
+    /* Blurple */
+    --navbar-font-color: #200382;
+
+    /* Slightly transparent navbar */
+    --navbar-background: rgba(255, 255, 255, 90%);
+    --navbar-menu-background: rgba(255, 255, 255, 90%);
 
     /* A lighter blurple */
     --navbar_hover-background: #3d16cb;
+
+    /* Lighter footer */
+    --footer-background: #f5f5f5;
 
     /* Override the overrides.. */
     --highlightjs-bg: #011627;
@@ -20,6 +27,10 @@
      * this looks better than the text cursor */
     .navbar-end span.navbar-link {
       cursor: default;
+    }
+
+    .navbar-end > a.navbar-item:hover, .navbar-item.has-dropdown:hover .navbar-link {
+        color: white;
     }
 }
 
@@ -35,12 +46,31 @@
 
 /* Hugo specific CSS */
 
+.navbar {
+  box-shadow: 0px 1px 5px var(--color-smoke-90);
+  z-index: 1001;
+}
 
 /* Simulate the "is-right" class from the antora default ui
  * on the right-most dropdown menu */
 .navbar-item:last-child .navbar-dropdown {
   left: auto;
   right: 0;
+}
+
+.body {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* expand in the vertical space between header and footer, move footer below the
+ * fold
+ */
+ body.article {
+    display: grid;
+    align-items: stretch;
+    height: 100%;
+    grid-template-rows: min-content auto 0;
 }
 
 /* Antora style left menu that we don't need on the home page
@@ -91,4 +121,49 @@ main .content {
 footer.footer {
   /* Cosmetic tweak so the footer color continues to the bottom for short pages */
   padding-bottom: 15em;
+}
+
+#circle1 {
+    position: fixed;
+    width: 50vw;
+    height: 50vw;
+    z-index: 1000;
+    right: -25vw;
+    top: -25vw;
+    pointer-events: none;
+    border: .15vw dashed var(--navbar-font-color);
+    border-radius: 50%;
+    animation: rotate 180s;
+}
+
+#circle2 {
+    position: fixed;
+    width: 40vw;
+    height: 45vw;
+    z-index: 1000;
+    right: -12vw;
+    top: -25vw;
+    pointer-events: none;
+    border: .15vw dashed #d3c7fb;
+    border-radius: 50%;
+    animation: rotate 180s;
+}
+
+#circle3 {
+    position: fixed;
+    width: 35vw;
+    height: 40vw;
+    z-index: 1000;
+    right: -3vw;
+    top: -24vw;
+    pointer-events: none;
+    border: .15vw dashed #28bddf;
+    border-radius: 50%;
+    animation: rotate 180s;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
 }
