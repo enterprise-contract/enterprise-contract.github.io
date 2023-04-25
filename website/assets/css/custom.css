@@ -111,6 +111,27 @@ main .content {
     line-height: 1.8em;
 }
 
+code .command {
+    font-weight: bold;
+    color: gold;
+}
+
+.doc pre .bar {
+    padding-right: 0.5rem;
+}
+
+.doc pre .bar:nth-child(1) {
+    color: #fc615b;
+}
+
+.doc pre .bar:nth-child(2) {
+    color: #febb2a;
+}
+
+.doc pre .bar:nth-child(3) {
+    color: #cecece;
+}
+
 /* For inline monospace text */
 .doc p > code {
   /* Add a contrast bg */
@@ -181,29 +202,4 @@ button {
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
     outline: none;
-}
-
-.doc pre {
-    box-shadow: 2px 2px 6px 0px gray;
-}
-
-code .command {
-    font-weight: bold;
-    color: gold;
-}
-
-.doc pre .bar {
-    padding-right: 0.5rem;
-}
-
-.doc pre .bar:nth-child(1) {
-    color: #fc615b;
-}
-
-.doc pre .bar:nth-child(2) {
-    color: #febb2a;
-}
-
-.doc pre .bar:nth-child(3) {
-    color: #cecece;
 }
