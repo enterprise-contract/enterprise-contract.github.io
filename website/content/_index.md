@@ -33,5 +33,5 @@ key: |
 ```
 
 {{<rawhtml>}}
-<button href="../docs/index.html" class="btn btn-white" >View the documentation</button>
+<a href="./docs/index.html"><button>View the documentation</button></a>
 {{</rawhtml>}}
