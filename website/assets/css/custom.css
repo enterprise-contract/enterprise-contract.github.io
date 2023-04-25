@@ -192,14 +192,12 @@ footer.footer {
 }
 
 button {
-	background-color: #a28fc9;
+	background-color: var(--link-font-color);
     box-shadow: 1px 1px 4px 0px gray;
 	border-radius: 4px;
 	cursor:pointer;
 	color:white;
-	font-size: 1.2rem;
     border: 0;
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
-    outline: none;
 }
