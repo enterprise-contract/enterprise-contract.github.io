@@ -7,7 +7,6 @@ security, and for the definition and enforcement of policies related to how
 container images are built and tested.
 
 ```
-{{<rawhtml>}}<span class="bar">&#11044;</span><span class="bar">&#11044;</span><span class="bar">&#11044;</span>{{</rawhtml>}}
 $ {{<rawhtml>}}<span class="command">ec validate image --image quay.io/redhat-appstudio/ec-golden-image --output summary</span>{{</rawhtml>}}
 components:
   - name: golden-container

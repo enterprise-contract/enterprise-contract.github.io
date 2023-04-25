@@ -116,20 +116,15 @@ code .command {
     color: gold;
 }
 
-.doc pre .bar {
-    padding-right: 0.5rem;
-}
-
-.doc pre .bar:nth-child(1) {
-    color: #fc615b;
-}
-
-.doc pre .bar:nth-child(2) {
-    color: #febb2a;
-}
-
-.doc pre .bar:nth-child(3) {
-    color: #cecece;
+.doc pre::before {
+    content: '⬤ ⬤ ⬤';
+    color: transparent;
+    padding: 0 0 0.5rem;
+    cursor: default;
+    display: block;
+    background: linear-gradient(90deg, #fc615b 0%, #fc615b 34%, #febb2a 34%, #febb2a 67%, #2f8024 67%, #2f8024 100%);
+    background-clip: text;
+    background-size: 4rem 1rem;
 }
 
 /* For inline monospace text */
@@ -195,8 +190,8 @@ button {
 	background-color: var(--link-font-color);
     box-shadow: 1px 1px 4px 0px gray;
 	border-radius: 4px;
-	cursor:pointer;
-	color:white;
+	cursor: pointer;
+	color: white;
     border: 0;
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
