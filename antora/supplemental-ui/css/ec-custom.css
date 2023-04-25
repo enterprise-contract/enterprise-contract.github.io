@@ -10,6 +10,9 @@
 
     /* A lighter blurple */
     --navbar_hover-background: #3d16cb;
+
+    /* Override the overrides.. */
+    --highlightjs-bg: #011627;
 }
 
 @media screen and (min-width: 1024px) {
@@ -18,6 +21,14 @@
     .navbar-end span.navbar-link {
       cursor: default;
     }
+}
+
+.hljs {
+    background-color: var(--highlightjs-bg) !important;
+    border-radius: 0.25em !important;
+    font-size: 90% !important;
+    line-height: 1.8em !important;
+    padding: 1em !important;
 }
 
 /* ************************************************* */

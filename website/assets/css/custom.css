@@ -10,6 +10,9 @@
 
     /* A lighter blurple */
     --navbar_hover-background: #3d16cb;
+
+    /* Override the overrides.. */
+    --highlightjs-bg: #011627;
 }
 
 @media screen and (min-width: 1024px) {
@@ -18,6 +21,14 @@
     .navbar-end span.navbar-link {
       cursor: default;
     }
+}
+
+.hljs {
+    background-color: var(--highlightjs-bg) !important;
+    border-radius: 0.25em !important;
+    font-size: 90% !important;
+    line-height: 1.8em !important;
+    padding: 1em !important;
 }
 
 /* ************************************************* */
@@ -86,7 +97,7 @@ main .content {
 
 .doc p {
   /* More space between paragraphs in Markdown output */
-  padding-top: 1.5em;
+  padding-top: 1em;
 }
 
 .paragraph p {
@@ -94,21 +105,13 @@ main .content {
   padding-top: 0;
 }
 
-/* For code blocks in blog posts */
-.doc pre {
-  /* Make it look like a terminal instead of default black on white */
-  color: var(--color-gray-10);
-  background-color: var(--color-jet-50);
+.doc pre.highlightjs {
+    font-size: 85%;
+    padding-top: 0.75em;
+}
 
-  /* Add some extra spacing */
-  padding: 1em;
-  margin-top: 0.5em;
-  margin-bottom: 0.25em;
-  border-radius: 0.25em;
-  font-size: 85%;
-
-  /* Use scrollbars for long lines */
-  overflow: auto;
+.doc pre.highlightjs code {
+    line-height: 1.8em;
 }
 
 /* For inline monospace text */

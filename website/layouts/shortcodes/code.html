@@ -1,0 +1,17 @@
+{{/*
+  Example usage (in Markdown):
+
+    {{<code "yaml">}}
+    foo:
+      bar: 42
+    {{</code>}}
+
+  I'm not sure exactly which classes are required to make
+  highlightjs work. I'm copying from the Antora output.
+
+*/}}
+<pre class="highlightjs">
+<code class="hljs{{ with .Get 0 }} language-{{ . }}{{ end }}">
+{{- trim .Inner "\n" -}}
+</code>
+</pre>
