@@ -8,8 +8,9 @@
     /* Blurple */
     --navbar-font-color: #200382;
 
-    /* Instead of the default nearly-black */
-    --navbar-background: white;
+    /* Slightly transparent navbar */
+    --navbar-background: rgba(255, 255, 255, 90%);
+    --navbar-menu-background: rgba(255, 255, 255, 90%);
 
     /* A lighter blurple */
     --navbar_hover-background: #3d16cb;
@@ -45,6 +46,10 @@
 
 /* Hugo specific CSS */
 
+.navbar {
+  box-shadow: 0px 1px 5px var(--color-smoke-90);
+  z-index: 1001;
+}
 
 /* Simulate the "is-right" class from the antora default ui
  * on the right-most dropdown menu */
