@@ -39,7 +39,8 @@ content:
       branches: main
       start_path: docs
     - url: https://github.com/enterprise-contract/ec-cookbook.git
-      branches: main
+      # was main
+      branches: slsa-wip
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
