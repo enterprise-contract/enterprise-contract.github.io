@@ -81,7 +81,7 @@ relativeURLs = true
   [[menu.main]]
     parent = 'Documentation'
     name = 'User Guide'
-    url = '/docs/ec-cookbook/main'
+    url = '/docs/user-guide/main'
     weight = 70
 
 [module]
