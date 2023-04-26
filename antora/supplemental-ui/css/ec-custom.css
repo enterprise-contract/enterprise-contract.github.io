@@ -34,6 +34,11 @@
     padding: 1em !important;
 }
 
+.doc pre.highlightjs code {
+    line-height: 1.8em;
+    box-shadow: 1px 1px 4px 0px gray;
+}
+
 /* ************************************************* */
 
 /* Lifted from website/themes/antora-default-ui-hugo-theme/assets/css/header.css */
