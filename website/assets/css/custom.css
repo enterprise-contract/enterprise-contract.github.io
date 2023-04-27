@@ -32,6 +32,13 @@
     }
 }
 
+/* When burger menu is open we don't want the transparency */
+@media screen and (max-width: 1023px) {
+  .navbar-menu.is-active {
+    background-color: white;
+  }
+}
+
 /* Smaller logo title for phone size screens */
 .logo-title { height: 7em; }
 @media screen and (max-width: 576px) {
