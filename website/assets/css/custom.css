@@ -32,6 +32,12 @@
     }
 }
 
+/* Smaller logo title for phone size screens */
+.logo-title { height: 7em; }
+@media screen and (max-width: 576px) {
+    .logo-title { height: 5em; }
+}
+
 .hljs {
     background-color: var(--highlightjs-bg) !important;
     border-radius: 0.25em !important;
