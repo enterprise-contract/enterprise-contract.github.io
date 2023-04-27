@@ -40,9 +40,14 @@
 }
 
 /* Smaller logo title for phone size screens */
-.logo-title { height: 7em; }
+.logo-title {
+    height: 7em;
+    margin-bottom: 1.2em;
+}
 @media screen and (max-width: 576px) {
-    .logo-title { height: 5em; }
+    .logo-title {
+        height: 5em;
+    }
 }
 
 .hljs {
@@ -212,4 +217,8 @@ footer.footer {
 #view-the-documentationdocsindexhtml {
     margin-top: 2em;
     margin-bottom: 3em;
+}
+
+p.big {
+    font-size: 115%;
 }
