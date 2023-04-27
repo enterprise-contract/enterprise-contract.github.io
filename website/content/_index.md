@@ -4,7 +4,7 @@ kind: home
 
 <!-- Todo: This should probably be in the layout somewhere, not embedded here in the markdown -->
 {{<rawhtml>}}
-<img src="/images/logo.png" style="width: 8rem; height: 8rem; border-radius: 0.25rem;">
+<img src="/images/logo-title.png" class="logo-title">
 {{</rawhtml>}}
 
 ## Enterprise Contract

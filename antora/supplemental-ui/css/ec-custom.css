@@ -5,11 +5,9 @@
  * Todo: DRY this up so we aren't maintaining it twice */
 
 :root {
-    /* Blue/purple-ish instead of the default nearly-black */
-    --navbar-background: #200382;
-
-    /* A lighter blurple */
-    --navbar_hover-background: #3d16cb;
+    /* Purple */
+    --navbar-background: #785fa9;
+    --navbar_hover-background: #785fa9;
 
     /* Lighter footer */
     --footer-background: #f5f5f5;
@@ -83,11 +81,11 @@
 }
 
 .rule-type-indicator.warning {
-    background-color: var(--caution-color);
+    background-color: #a0439c; /* var(--caution-color); */
 }
 
 .rule-type-indicator.failure {
-    background-color: var(--important-color);
+    background-color: #d32f2f; /* var(--important-color); */
 }
 
 footer.footer {
