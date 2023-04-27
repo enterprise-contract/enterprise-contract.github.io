@@ -184,3 +184,9 @@ footer.footer {
 .button a:hover {
     color: white;
 }
+
+/* hack hack */
+#view-the-documentationdocsindexhtml {
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
