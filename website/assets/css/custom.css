@@ -134,43 +134,38 @@ footer.footer {
   padding-bottom: 15em;
 }
 
-#circle1 {
+.header .circle {
     position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+    border-radius: 50%;
+    animation: rotate 180s;
+    border-width: 0.1rem;
+    border-style: dashed;
+}
+
+.header .circle1 {
     width: 50vw;
     height: 50vw;
-    z-index: 1000;
     right: -25vw;
     top: -25vw;
-    pointer-events: none;
-    border: .15vw dashed var(--navbar-font-color);
-    border-radius: 50%;
-    animation: rotate 180s;
+    border-color: var(--navbar-font-color);
 }
 
-#circle2 {
-    position: fixed;
+.header .circle2 {
     width: 40vw;
     height: 45vw;
-    z-index: 1000;
     right: -12vw;
     top: -25vw;
-    pointer-events: none;
-    border: .15vw dashed #d3c7fb;
-    border-radius: 50%;
-    animation: rotate 180s;
+    border-color: #d3c7fb;
 }
 
-#circle3 {
-    position: fixed;
+.header .circle3 {
     width: 35vw;
     height: 40vw;
-    z-index: 1000;
     right: -3vw;
     top: -24vw;
-    pointer-events: none;
-    border: .15vw dashed #28bddf;
-    border-radius: 50%;
-    animation: rotate 180s;
+    border-color: #28bddf;
 }
 
 @keyframes rotate {
@@ -179,11 +174,26 @@ footer.footer {
     }
 }
 
+/* Tweak the circles for smaller screens */
+
+/* Break point when burger menu activates */
+@media screen and (max-width: 1023px) {
+  .header .circle1 { right: -15vw; }
+  .header .circle2 { right: -2vw; }
+  .header .circle3 { right: 7vw; }
+}
+/* Break point for phone-sized screen */
+@media screen and (max-width: 576px) {
+  .header .circle1 { top: -20vw }
+  .header .circle2 { top: -20vw }
+  .header .circle3 { top: -19vw; }
+}
+
 .button {
     display: inline-block;
-	background-color: var(--link-font-color);
+    background-color: var(--link-font-color);
     box-shadow: 1px 1px 4px 0px gray;
-	border-radius: 4px;
+    border-radius: 4px;
     border: 0;
     padding: 0.5rem 1rem 0.3rem;
     cursor: pointer;
