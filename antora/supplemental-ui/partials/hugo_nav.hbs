@@ -1,0 +1,41 @@
+{{#each (parseHugoMenu)}}
+	{{#unless parent~}}
+		{{#if pageRef~}}
+			{{#if graphic~}}
+				<a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}{{pageRef~}}">{{graphic}}</a>
+			{{else~}}
+				<a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}{{pageRef~}}">{{name~}}</a>
+			{{/if~}}
+		{{else if url~}}
+			{{#if graphic~}}
+				<a class="navbar-item" href="{{url~}}" title="{{name}}">{{{graphic}}}</a>
+			{{else~}}
+				<a class="navbar-item" href="{{url~}}">{{name~}}</a>
+			{{/if~}}
+		{{else~}}
+			{{#if children~}}
+				<div class="navbar-item has-dropdown is-hoverable">
+			{{/if~}}
+			{{#if graphic~}}
+				<span class="navbar-link" title="{{name}}">{{graphic}}</span>
+			{{else~}}
+				<span class="navbar-link">{{name~}}</span>
+			{{/if~}}
+		{{/if~}}
+			{{#if children~}}
+		<div class="navbar-dropdown is-right">
+		{{#each children~}}
+			{{~#if pageRef~}}
+				<a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}{{pageRef~}}">{{name~}}</a>
+			{{~else if url~}}
+				<a class="navbar-item" href="{{url~}}">{{name~}}</a>
+			{{~else~}}
+				<span class="navbar-link">{{name~}}</span>
+			{{~/if~}}
+		{{/each~}}
+		</div>
+	</div>
+	{{/if~}}
+
+	{{/unless~}}
+{{/each}}
