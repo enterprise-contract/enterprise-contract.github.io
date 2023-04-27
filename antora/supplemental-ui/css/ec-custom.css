@@ -60,14 +60,15 @@
 @media screen and (min-width: 1024px) {
     #search-input {
         font-size: 85%;
-        width: 8em;
+        width: 11em;
         margin-right: 0.3rem;
     }
 
     /* Widen the field when user is searching */
     #search-input:focus {
-        width: 14em;
+        width: 16em;
         background-color: white;
+        transition: width 0.15s;
     }
 }
 
