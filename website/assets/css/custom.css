@@ -5,15 +5,13 @@
  * Todo: DRY this up so we aren't maintaining it twice */
 
 :root {
-    /* Blurple */
-    --navbar-font-color: #200382;
+    /* Purple */
+    --navbar-font-color: #785fa9;
+    --navbar_hover-background: #785fa9;
 
     /* Slightly transparent navbar */
     --navbar-background: rgba(255, 255, 255, 90%);
     --navbar-menu-background: rgba(255, 255, 255, 90%);
-
-    /* A lighter blurple */
-    --navbar_hover-background: #3d16cb;
 
     /* Lighter footer */
     --footer-background: #f5f5f5;
