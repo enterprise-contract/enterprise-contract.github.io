@@ -202,7 +202,7 @@ footer.footer {
 
 .button {
     display: inline-block;
-    background-color: var(--link-font-color);
+    background-color: var(--ec-navbar-purple);
     box-shadow: 1px 1px 4px 0px gray;
     border-radius: 4px;
     border: 0;
