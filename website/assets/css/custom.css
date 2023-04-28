@@ -123,6 +123,7 @@ main .content {
 
 .doc pre.highlightjs code {
     line-height: 1.8em;
+    box-shadow: 1px 1px 4px 0px gray;
 }
 
 /* For inline monospace text */
