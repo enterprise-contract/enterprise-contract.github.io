@@ -57,7 +57,7 @@ jobs:
       - name: Unzip website artifact
         run: |
           mkdir public
-          unzip -q 'artifacts/data-[0-2].zip' -d public
+          unzip -q 'artifacts/data-[0-1].zip' -d public
           rm -rf artifacts
       - name: Setup pull request data
         id: data

@@ -46,7 +46,7 @@ ui:
     snapshot: true
   supplemental_files: ./supplemental-ui
 output:
-  dir: ../public/docs
+  dir: ../website/antora/docs
 antora:
   extensions:
 # Order here determines the order of execution, this is important for the

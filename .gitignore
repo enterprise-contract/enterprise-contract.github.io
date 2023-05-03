@@ -3,6 +3,7 @@
 # Rendered documentation output
 public
 node_modules
+website/antora
 
 # Generated files by hugo
 /public/

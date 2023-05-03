@@ -53,15 +53,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Download hugo artifact
+      - name: Download website artifact
         uses: actions/download-artifact@v3
         with:
-          name: build-hugo
-          path: '.'
-      - name: Download antora artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: build-antora
+          name: website
           path: '.'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
