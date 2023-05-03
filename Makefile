@@ -28,7 +28,7 @@ build-hugo: hugo-theme ## Build hugo docs
 	@cd website && hugo --config hugo.toml
 	@echo file://$(PWD)/public/index.html
 
-build-all: build-hugo build-antora
+build-all: build-antora build-hugo
 
 ifndef THEME_NAME
 THEME_NAME=night-owl
