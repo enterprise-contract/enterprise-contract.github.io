@@ -1,0 +1,16 @@
+
+/* Styles shared between hugo and antora */
+
+:root {
+    /* Icon purple */
+    --ec-icon-purple: #785fa9;
+
+    /* A little darker than icon purple for better contrast */
+    --ec-navbar-purple: #634f8b;
+
+    /* Lighter footer */
+    --footer-background: #f5f5f5;
+
+    /* Override the overrides.. */
+    --highlightjs-bg: #011627;
+}
