@@ -5,7 +5,7 @@ theme = 'github.com/basil/antora-default-ui-hugo-theme'
 publishDir = '../public'
 copyright = "Red Hat, Inc. All rights reserved."
 relativeURLs = true
-staticDir = ["static", "antora"]
+staticDir = ["../common/static", "antora"]
 
 [params]
   since = 2023
