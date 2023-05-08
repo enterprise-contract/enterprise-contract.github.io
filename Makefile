@@ -2,8 +2,10 @@
 help:
 	@grep '[[:space:]]##[[:space:]]' Makefile | sed 's/^\(.*\):.*##\(.*\)$$/#\2\nmake \1\n/'
 
-preview: preview-antora ## Run hugo server for website hacking
+hugo-server: ## Run hugo server for website hacking
 	@cd website && hugo server --config hugo.toml
+
+preview: preview-antora hugo-server ## Run hugo server for website hacking with pre-built antora docs
 
 antora-local-build: ## Build antora docs once using your locally checked out git repos
 	@cd antora && hack/local-build.sh
