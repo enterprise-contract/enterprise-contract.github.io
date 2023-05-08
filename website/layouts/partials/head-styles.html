@@ -1,0 +1,39 @@
+{{ $vars := resources.Get "css/vars.css" }}
+{{ $base := resources.Get "css/base.css" }}
+{{ $body := resources.Get "css/body.css" }}
+{{ $nav := resources.Get "css/nav.css" }}
+{{ $main := resources.Get "css/main.css" }}
+{{ $toolbar := resources.Get "css/toolbar.css" }}
+{{ $breadcrumbs := resources.Get "css/breadcrumbs.css" }}
+{{ $page_versions := resources.Get "css/page-versions.css" }}
+{{ $toc := resources.Get "css/toc.css" }}
+{{ $doc := resources.Get "css/doc.css" }}
+{{ $pagination := resources.Get "css/pagination.css" }}
+{{ $pagination_list := resources.Get "css/pagination-list.css" }}
+{{ $header := resources.Get "css/header.css" }}
+{{ $footer := resources.Get "css/footer.css" }}
+{{ $print := resources.Get "css/print.css" }}
+{{ $ec_common := resources.Get "css/ec-common.css" }}
+{{ $custom := resources.Get "css/custom.css" }}
+
+{{ $site := slice }}
+{{ with $vars }}{{ $site = $site | append . }}{{ end }}
+{{ with $base }}{{ $site = $site | append . }}{{ end }}
+{{ with $body }}{{ $site = $site | append . }}{{ end }}
+{{ with $nav }}{{ $site = $site | append . }}{{ end }}
+{{ with $main }}{{ $site = $site | append . }}{{ end }}
+{{ with $toolbar }}{{ $site = $site | append . }}{{ end }}
+{{ with $breadcrumbs }}{{ $site = $site | append . }}{{ end }}
+{{ with $page_versions }}{{ $site = $site | append . }}{{ end }}
+{{ with $toc }}{{ $site = $site | append . }}{{ end }}
+{{ with $doc }}{{ $site = $site | append . }}{{ end }}
+{{ with $pagination }}{{ $site = $site | append . }}{{ end }}
+{{ with $pagination_list }}{{ $site = $site | append . }}{{ end }}
+{{ with $header }}{{ $site = $site | append . }}{{ end }}
+{{ with $footer }}{{ $site = $site | append . }}{{ end }}
+{{ with $print }}{{ $site = $site | append . }}{{ end }}
+{{ with $ec_common }}{{ $site = $site | append . }}{{ end }}
+{{ with $custom }}{{ $site = $site | append . }}{{ end }}
+
+{{ $site := $site | resources.Concat "css/site.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $site.RelPermalink }}" {{ $site.Data.Integrity | printf "integrity=%q" | safeHTMLAttr }}>

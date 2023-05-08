@@ -54,6 +54,12 @@ jobs:
       - name: Install Dart Sass Embedded
         run: sudo snap install dart-sass-embedded
 
+      - name: Sync CSS content
+        run: npm run sync-css
+
+      - name: Sync head content
+        run: npm run sync-head
+
       - name: Build documentation
         run: npm --prefix antora ci && npm --prefix antora run build
 

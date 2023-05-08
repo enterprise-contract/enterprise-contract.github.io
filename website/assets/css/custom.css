@@ -1,37 +1,18 @@
-
 /* ***************************************************
- * Some of this CSS is shared exactly between the hugo and antora builds,
- * via website/assets/css/custom.css and antora/supplemental-ui/css/ec-custom.css
- * Todo: DRY this up so we aren't maintaining it twice */
+ * This CSS extends the common CSS found in 
+ * common/css/common.css
+*/
 
 :root {
-    /* Icon purple */
-    --ec-icon-purple: #785fa9;
-
-    /* A little darker than icon purple for better contrast */
-    --ec-navbar-purple: #634f8b;
-
     --navbar-font-color: var(--ec-navbar-purple);
     --navbar_hover-background: var(--ec-icon-purple);
 
     /* Slightly transparent navbar */
     --navbar-background: rgba(255, 255, 255, 90%);
     --navbar-menu-background: rgba(255, 255, 255, 90%);
-
-    /* Lighter footer */
-    --footer-background: #f5f5f5;
-
-    /* Override the overrides.. */
-    --highlightjs-bg: #011627;
 }
 
 @media screen and (min-width: 1024px) {
-    /* For hover menus that are not links themselves
-     * this looks better than the text cursor */
-    .navbar-end span.navbar-link {
-      cursor: default;
-    }
-
     .navbar-end > a.navbar-item:hover, .navbar-item.has-dropdown:hover .navbar-link {
         color: white;
     }
@@ -54,18 +35,6 @@
         height: 5em;
     }
 }
-
-.hljs {
-    background-color: var(--highlightjs-bg) !important;
-    border-radius: 0.25em !important;
-    font-size: 90% !important;
-    line-height: 1.8em !important;
-    padding: 1em !important;
-}
-
-/* ************************************************* */
-
-/* Hugo specific CSS */
 
 .navbar {
   box-shadow: 0px 1px 5px var(--color-smoke-90);

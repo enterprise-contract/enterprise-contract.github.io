@@ -1,50 +1,21 @@
 
 /* ***************************************************
- * Some of this CSS is shared exactly between the hugo and antora builds,
- * via website/assets/css/custom.css and antora/supplemental-ui/css/ec-custom.css
- * Todo: DRY this up so we aren't maintaining it twice */
+ * This CSS extends the common CSS found in 
+ * common/css/common.css
+*/
 
 :root {
-    /* Icon purple */
-    --ec-icon-purple: #785fa9;
-
     /* A little darker than icon purple for better contrast */
     --ec-navbar-purple: #634f8b;
 
     --navbar-background: var(--ec-navbar-purple);
     --navbar_hover-background: var(--ec-icon-purple);
-
-    /* Lighter footer */
-    --footer-background: #f5f5f5;
-
-    /* Override the overrides.. */
-    --highlightjs-bg: #011627;
-}
-
-@media screen and (min-width: 1024px) {
-    /* For hover menus that are not links themselves
-     * this looks better than the text cursor */
-    .navbar-end span.navbar-link {
-      cursor: default;
-    }
-}
-
-.hljs {
-    background-color: var(--highlightjs-bg) !important;
-    border-radius: 0.25em !important;
-    font-size: 90% !important;
-    line-height: 1.8em !important;
-    padding: 1em !important;
 }
 
 .doc pre.highlightjs code {
     line-height: 1.8em;
     box-shadow: 1px 1px 4px 0px gray;
 }
-
-/* ************************************************* */
-
-/* Lifted from website/themes/antora-default-ui-hugo-theme/assets/css/header.css */
 
 .navbar {
     background-color: var(--navbar-background);

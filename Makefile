@@ -2,22 +2,27 @@
 help:
 	@grep '[[:space:]]##[[:space:]]' Makefile | sed 's/^\(.*\):.*##\(.*\)$$/#\2\nmake \1\n/'
 
-preview: preview-antora ## Run hugo server for website hacking
+sync-common-content:
+	@npm run sync-css && npm run sync-head
+	
+preview: sync-common-content preview-antora ## Run hugo server for website hacking
+	@npm run sync-css && npm run sync-head
 	@cd website && hugo server --config hugo.toml
 
-antora-local-build: ## Build antora docs once using your locally checked out git repos
+antora-local-build: sync-common-content ## Build antora docs once using your locally checked out git repos
 	@cd antora && hack/local-build.sh
 
-antora-local-live: ## Live build antora docs your locally checked out git repos
+antora-local-live: sync-common-content ## Live build antora docs your locally checked out git repos
 	@cd antora && hack/local-live.sh
 
 preview-antora: ## Build antora docs
+	
 	@cd antora && npm ci && URL=http://localhost:1313/docs npm run build
 
-build-antora: ## Build antora docs
+build-antora: sync-common-content ## Build antora docs
 	@cd antora && npm ci && npm run build
 
-build-antora-fast: ## Build antora docs without re-fetching sources
+build-antora-fast: sync-common-content ## Build antora docs without re-fetching sources
 	@cd antora && npm run build:fast
 
 # Fixme: Not sure how to make the stylesheet and javascript urls work

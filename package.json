@@ -12,5 +12,9 @@
   },
   "devDependencies": {
     "wrangler": "^2.19.0"
+  },
+  "scripts": {
+    "sync-head": "node scripts/sync-head.js",
+    "sync-css": "node scripts/sync-css.js"
   }
 }
