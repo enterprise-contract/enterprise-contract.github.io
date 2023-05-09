@@ -72,6 +72,17 @@
   z-index: 1001;
 }
 
+.navbar-brand .navbar-item:first-child :not(:last-child) {
+  padding-right: .375rem;
+}
+
+
+#navbar-logo {
+  height: 1.75rem;
+  margin-right: 0.5rem;
+  margin-top: -0.15em;
+}
+
 /* Simulate the "is-right" class from the antora default ui
  * on the right-most dropdown menu */
 .navbar-item:last-child .navbar-dropdown {
@@ -87,7 +98,7 @@
 /* expand in the vertical space between header and footer, move footer below the
  * fold
  */
- body.article {
+body.article {
     display: grid;
     align-items: stretch;
     height: 100%;
