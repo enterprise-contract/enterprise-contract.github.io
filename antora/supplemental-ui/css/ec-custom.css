@@ -50,6 +50,12 @@
     background-color: var(--navbar-background);
 }
 
+#navbar-logo {
+    height: 1.75rem;
+    margin-right: 0.5rem;
+    margin-top: -0.15em;
+}
+
 @media screen and (min-width: 1024px) {
     .navbar-end > a.navbar-item:hover,
     .navbar-end .navbar-link:hover {
