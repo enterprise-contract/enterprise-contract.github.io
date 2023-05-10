@@ -116,6 +116,10 @@ code, kbd, pre {
     margin-right: auto;
 }
 
+.wide .nav-container {
+  display: none;
+}
+
 /* expand in the vertical space between header and footer, move footer below the
  * fold
  */
