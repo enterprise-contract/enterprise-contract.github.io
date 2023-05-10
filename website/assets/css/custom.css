@@ -1,9 +1,3 @@
-
-/* ***************************************************
- * Some of this CSS is shared exactly between the hugo and antora builds,
- * via website/assets/css/custom.css and antora/supplemental-ui/css/ec-custom.css
- * Todo: DRY this up so we aren't maintaining it twice */
-
 :root {
     /* Icon purple */
     --ec-icon-purple: #785fa9;
@@ -11,18 +5,23 @@
     /* A little darker than icon purple for better contrast */
     --ec-navbar-purple: #634f8b;
 
-    --navbar-font-color: var(--ec-navbar-purple);
+    --navbar-background: var(--ec-navbar-purple);
     --navbar_hover-background: var(--ec-icon-purple);
-
-    /* Slightly transparent navbar */
-    --navbar-background: rgba(255, 255, 255, 90%);
-    --navbar-menu-background: rgba(255, 255, 255, 90%);
 
     /* Lighter footer */
     --footer-background: #f5f5f5;
 
     /* Override the overrides.. */
     --highlightjs-bg: #011627;
+}
+
+:root.light {
+  --navbar-font-color: var(--ec-navbar-purple);
+  --navbar_hover-background: var(--ec-icon-purple);
+
+  /* Slightly transparent navbar */
+  --navbar-background: rgba(255, 255, 255, 90%);
+  --navbar-menu-background: rgba(255, 255, 255, 90%);
 }
 
 @media screen and (min-width: 1024px) {
@@ -55,19 +54,7 @@
     }
 }
 
-.hljs {
-    background-color: var(--highlightjs-bg) !important;
-    border-radius: 0.25em !important;
-    font-size: 90% !important;
-    line-height: 1.8em !important;
-    padding: 1em !important;
-}
-
-/* ************************************************* */
-
-/* Hugo specific CSS */
-
-.navbar {
+.light .navbar {
   box-shadow: 0px 1px 5px var(--color-smoke-90);
   z-index: 1001;
 }
@@ -75,7 +62,6 @@
 .navbar-brand .navbar-item:first-child :not(:last-child) {
   padding-right: .375rem;
 }
-
 
 #navbar-logo {
   height: 1.75rem;
@@ -90,7 +76,36 @@
   right: 0;
 }
 
-.body {
+/* Code syntax higlighting */
+
+.hljs {
+  background-color: var(--highlightjs-bg) !important;
+  border-radius: 0.25em !important;
+  font-size: 90% !important;
+  line-height: 1.8em !important;
+  padding: 1em !important;
+}
+
+.doc pre.highlightjs {
+  font-size: 85%;
+  padding-top: 0.75em;
+}
+
+.doc pre.highlightjs code {
+  line-height: 1.8em;
+  box-shadow: 1px 1px 4px 0px gray;
+}
+
+/* For inline monospace text */
+.doc p > code {
+  /* Add a contrast bg */
+  background-color: var(--color-smoke-70);
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  font-size: 90%;
+}
+
+.wide .body {
     margin-left: auto;
     margin-right: auto;
 }
@@ -105,50 +120,19 @@ body.article {
     grid-template-rows: min-content auto 0;
 }
 
-/* Antora style left menu that we don't need on the home page
- * Todo: Customize the layout to remove it properly */
-.body > .nav-container {
-    display: none !important;
-}
-
-/* Antora style breadcrumb nav that we don't need on the home page
- * Todo: Customize the layout to remove it properly */
-main .toolbar {
-    display: none !important;
-}
-
-main .content {
+.wide main .content {
     /* With the breadcrumb nav gone some extra spacing is needed */
     margin-top: 2rem;
 }
 
-.doc p {
+.wide .doc p {
   /* More space between paragraphs in Markdown output */
   padding-top: 1em;
 }
 
-.paragraph p {
+.wide .paragraph p {
   /* ...but not inside a div.paragraph... */
   padding-top: 0;
-}
-
-.doc pre.highlightjs {
-    font-size: 85%;
-    padding-top: 0.75em;
-}
-
-.doc pre.highlightjs code {
-    line-height: 1.8em;
-    box-shadow: 1px 1px 4px 0px gray;
-}
-
-/* For inline monospace text */
-.doc p > code {
-  /* Add a contrast bg */
-  background-color: var(--color-smoke-70);
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-  font-size: 90%;
 }
 
 footer.footer {
@@ -238,4 +222,74 @@ footer.footer {
 
 p.big {
     font-size: 115%;
+}
+
+/* Search box tweaks */
+
+#search-input {
+  border-radius: 0.2em;
+}
+
+@media screen and (min-width: 1024px) {
+  #search-input {
+      font-size: 85%;
+      width: 11em;
+      margin-right: 0.3rem;
+      border: 1px solid #dbdbdb;
+      line-height: 1.5;
+  }
+
+  /* Widen the field when user is searching */
+  #search-input:focus {
+      width: 16em;
+      background-color: white;
+      transition: width 0.15s;
+  }
+}
+
+/* For EC policy rule docs */
+
+.rule-type-indicator {
+  border-radius: 0.25rem;
+  color: white;
+  background-color: #555;
+  padding: 0 0.25em;
+}
+
+.rule-type-indicator.warning {
+  background-color: #a0439c; /* var(--caution-color); */
+}
+
+.rule-type-indicator.failure {
+  background-color: #d32f2f; /* var(--important-color); */
+}
+
+/* Image zoom */
+
+.imageblock {
+  cursor: zoom-in;
+}
+
+.zoom .imageblock {
+  display: none;
+  position: fixed;
+  margin-top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.5);
+  outline: none;
+}
+
+.zoom.shown .imageblock {
+  cursor: zoom-out;
+  display: flex;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom.shown .imageblock .title {
+  color: white;
 }
