@@ -300,6 +300,21 @@ p.big {
   color: white;
 }
 
+/* It's a sidebar but it appears inline. */
+.doc .sidebarblock {
+  /* A little lighter. Default is e9e9e9. */
+  /* Same as var(--color-smoke-70) */
+  background-color: #f0f0f0;
+  /* A smidge more vertical padding */
+  padding: 1.2rem 1.5rem;
+  /* A smidge less round */
+  border-radius: 0.5rem;
+}
+.doc .sidebarblock>.content>.title {
+  /* The default is center here. I think left looks better. */
+  text-align: left;
+}
+
 /* Fonts */
 @font-face {
   font-family:Roboto;
