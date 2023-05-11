@@ -32,4 +32,4 @@ ifndef THEME_NAME
 THEME_NAME=night-owl
 endif
 download-highlight-js-theme:
-	curl -s https://highlightjs.org/static/demo/styles/$(THEME_NAME).css > common/css/highlightjs-theme.css
+	curl -s https://highlightjs.org/static/demo/styles/$(THEME_NAME).css > website/assets/css/highlight.css
