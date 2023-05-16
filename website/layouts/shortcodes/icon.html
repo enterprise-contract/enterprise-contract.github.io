@@ -1,0 +1,2 @@
+{{ $icon := resources.Get ( printf "svg/heroicons/24/outline/%s.svg" (index .Params 0) ) }}
+{{ $icon.Content | safeHTML }}
