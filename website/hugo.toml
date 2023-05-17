@@ -87,3 +87,6 @@ staticDir = ["static", "antora"]
 [module]
 [[module.imports]]
   path = 'github.com/basil/antora-default-ui-hugo-theme'
+
+[[module.imports]]
+path = "github.com/gohugoio/hugo-mod-heroicons"
