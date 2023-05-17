@@ -90,3 +90,9 @@ staticDir = ["static", "antora"]
 
 [[module.imports]]
 path = "github.com/gohugoio/hugo-mod-heroicons"
+
+[[module.imports]]
+path = "github.com/faisalman/ua-parser-js"
+[[module.imports.mounts]]
+source = "src"
+target = "assets/js/vendor"

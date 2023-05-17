@@ -145,6 +145,10 @@ body.article {
   padding-top: 0;
 }
 
+.wide article.doc article {
+  margin-top: 3rem;
+}
+
 footer.footer {
   /* Cosmetic tweak so the footer color continues to the bottom for short pages */
   padding-bottom: 15em;
@@ -205,7 +209,7 @@ footer.footer {
   .header .circle3 { top: -19vw; }
 }
 
-.button {
+h3.button {
     display: inline-block;
     background-color: var(--ec-navbar-purple);
     box-shadow: 1px 1px 4px 0px gray;
@@ -213,9 +217,15 @@ footer.footer {
     border: 0;
     padding: 0.5rem 1rem 0.3rem;
     cursor: pointer;
+    margin-top: 3rem;
+}
+
+.button:not(:first-child) {
+  margin-left: 0.5rem;
 }
 
 .button a {
+    display: inline-flex;
     text-decoration: none;
     color: white;
 }
@@ -224,10 +234,19 @@ footer.footer {
     color: white;
 }
 
-/* hack hack */
-#view-the-documentationdocsindexhtml {
-    margin-top: 2em;
-    margin-bottom: 3em;
+.button svg {
+  margin-right: 0.5rem;
+}
+
+.button svg path {
+  stroke: white;
+}
+
+a.all-downloads {
+  display: block;
+  position: absolute;
+  color: var(--color-gray-30);
+  padding-left: 1rem;
 }
 
 p.big {
