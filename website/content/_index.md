@@ -16,4 +16,4 @@ how container images are built and tested.
 
 ### [{{< icon "arrow-down-circle" >}} Download](https://github.com/enterprise-contract/ec-cli/releases/tag/snapshot){#download .button}
 
-### [{{< icon "book-open" >}} View the documentation](./docs/index.html){.button}
+### [{{< icon "book-open" >}} Documentation](./docs/index.html){.button}
