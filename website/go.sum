@@ -1,5 +1,7 @@
 github.com/basil/antora-default-ui-hugo-theme v0.0.0-20210103230659-17b9bc527014 h1:Rz9M6xM45T06+JyKpeRdPBQTqnCug4m7mfbi6Go91hw=
 github.com/basil/antora-default-ui-hugo-theme v0.0.0-20210103230659-17b9bc527014/go.mod h1:axVFIhw8O9beSTVrHRkgN/QU2RESkkNdAk6ICv1RK9s=
+github.com/faisalman/ua-parser-js v0.7.1 h1:kI9gwcJsW6mip2LLkKM/ROWL3wr6+0rkFU33ZKf0luc=
+github.com/faisalman/ua-parser-js v0.7.1/go.mod h1:OIN2lSqEtPIApeElk85FgIakGCniJ+LxdBfUZr3p8YY=
 github.com/gohugoio/hugo-mod-heroicons v0.0.0-20230311221257-aa5a3a372386 h1:4ssTg+cPu0aiV35lrF2APJ+6d3/s909LcAyC30d+Sd8=
 github.com/gohugoio/hugo-mod-heroicons v0.0.0-20230311221257-aa5a3a372386/go.mod h1:Dr4s5WED0qTYSmJtl8LXknqSaO4Jmw5UF6OqKMCWaxo=
 github.com/tailwindlabs/heroicons v2.0.16+incompatible/go.mod h1:2SHGOdw86jviBkoeQINcTfkzAAao9dciip4RsMS9xIg=
