@@ -11,6 +11,6 @@
     "node": "18"
   },
   "devDependencies": {
-    "wrangler": "^2.20.0"
+    "wrangler": "^3.0.1"
   }
 }
