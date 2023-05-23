@@ -38,8 +38,8 @@ content:
     - url: https://github.com/enterprise-contract/enterprise-contract-controller.git
       branches: main
       start_path: docs
-    - url: https://github.com/enterprise-contract/ec-cookbook.git
-      branches: main
+    - url: https://github.com/simonbaird/ec-cookbook.git
+      branches: reproduce-output-howto
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
