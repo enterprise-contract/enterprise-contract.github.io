@@ -304,7 +304,7 @@ p.big {
   position: fixed;
   margin-top: 0;
   z-index: 1000;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.75);
   outline: none;
 }
 
@@ -317,6 +317,10 @@ p.big {
   right: 0;
   align-items: center;
   justify-content: center;
+}
+
+.zoom.shown .imageblock img {
+   max-height: 92vh;
 }
 
 .zoom.shown .imageblock .title {
