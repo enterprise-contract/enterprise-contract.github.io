@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html{{ with .Site.LanguageCode }} lang="{{ . }}"{{ end }} class="light wide">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="article">
+    {{ partial "header.html" . }}
+    <div class="body">
+      {{ partial "nav.html" . }}
+      <main class="article">
+        {{ partial "toolbar.html" . }}
+        <div class="hero">
+            <div class="hero-header"></div>
+            <div class="hero-intro">
+                <p>The Enterprise Contract is a set of tools for maintaining software supply chain security, and for the definition and enforcement of policies related to how container images are built and tested.</p>
+            </div>
+            <div class="hero-highlights">
+                <div class="hero-feature">
+                    <div class="hero-feature-icon">
+                        {{ $icon := resources.Get "svg/heroicons/24/outline/wrench-screwdriver.svg" }}
+                        {{ $icon.Content | safeHTML }}
+                    </div>
+                    <div class="hero-feature-details">
+                        <h2>Built with Sigstore and Open Policy Agent</h2>
+                        <p>
+                            Enterprise Contract builds on the industry standard open source solutions for artifact provenance verification and policy validation, backed by the Open Source Security Foundation and the Cloud Native Computing Foundation.
+                        </p>
+                    </div>
+                </div>
+                <div class="hero-feature">
+                    <div class="hero-feature-icon">
+                        {{ $icon := resources.Get "svg/heroicons/24/outline/shield-check.svg" }}
+                        {{ $icon.Content | safeHTML }}
+                    </div>
+                    <div class="hero-feature-details">
+                        <h2>Verify provenance & apply policies in a single step</h2>
+                        <p>
+                            Produce human readable output for provenance or policy violations. Verify SLSA compliance with extensible policies. Verify single or multiple images with collated output. Access configuration, data and policy rules from multiple sources. 
+                        </p>
+                    </div>
+                </div>
+                <div class="hero-feature">
+                    <div class="hero-feature-icon">
+                        {{ $icon := resources.Get "svg/heroicons/24/outline/square-3-stack-3d.svg" }}
+                        {{ $icon.Content | safeHTML }}
+                    </div>
+                    <div class="hero-feature-details">
+                        <h2>Fits into your existing CI/CD pipelines</h2>
+                        <p>
+                            Enterprise Contract is platform agnostic. With its multi-format output, it can easily fit into your CI/CD workflow. Use it as post-build CI, as a gate for releases, as a deploy-time verifier, or anywhere in between.
+                        </p>
+                    </div>
+                </div>
+                <div class="hero-feature">
+                    <div class="hero-feature-icon">
+                        {{ $icon := resources.Get "svg/heroicons/24/outline/check-badge.svg" }}
+                        {{ $icon.Content | safeHTML }}
+                    </div>
+                    <div class="hero-feature-details">
+                        <h2>Red Hat Trusted Application Pipeline Integration</h2>
+                        <p>
+                            Adopted by Red Hat for their own next generation cloud build system and integrated in new RHTAP CI/CD pipelines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-links">{{ .Content }}</div>
+        </div>
+        <div class="divider">
+            <svg class="flowing"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 "
+            preserveAspectRatio="none">
+                <defs>
+                    <path id="gentle-wave"
+                    d="M-160 44c30 0 
+                    58-18 88-18s
+                    58 18 88 18 
+                    58-18 88-18 
+                    58 18 88 18
+                    v44h-352z" />
+                </defs>
+                    <g class="parallax1">
+                        <use xlink:href="#gentle-wave" x="50" y="3"/>
+                    </g>
+                    <g class="parallax2">
+                        <use xlink:href="#gentle-wave" x="50" y="0"/>
+                    </g>
+                    <g class="parallax3">
+                        <use xlink:href="#gentle-wave" x="50" y="9"/>
+                    </g>
+                    <g class="parallax4">
+                        <use xlink:href="#gentle-wave" x="50" y="6"/>  
+                    </g>
+            </svg>
+        </div>
+        <div class="content">
+            <article class="doc">
+                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+                {{ range $paginator.Pages }}
+                  {{ partial "post-preview.html" . }}
+                {{ end }}
+                <div class="pagination-centered">
+                  {{ template "_internal/pagination.html" . }}
+                </div>            
+            </article>
+        </div>
+      </main>
+    </div>
+    {{ partial "footer.html" . }}
+  </body>
+</html>
+
+{{/*  {{ define "main" }}
+    <div class="hero_header" style="min-height: 100vh; display:block; background-color:blue;width:100%">hi</div>
+    {{ .Content }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+    {{ range $paginator.Pages }}
+      {{ partial "post-preview.html" . }}
+    {{ end }}
+    <div class="pagination-centered">
+      {{ template "_internal/pagination.html" . }}
+    </div>
+  </article>
+{{ end }}  */}}
