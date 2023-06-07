@@ -10,8 +10,8 @@
   highlightjs work. I'm copying from the Antora output.
 
 */}}
-<pre class="highlightjs">
-<code class="hljs{{ with .Get 0 }} language-{{ . }}{{ end }}">
-{{- trim .Inner "\n" -}}
-</code>
-</pre>
+<div class="listingblock">
+  <div class="content">
+    <pre class="highlightjs highlight"><code class="hljs{{ with .Get 0 }} language-{{ . }}" data-lang="{{ . }}{{ end }}">{{- trim .Inner "\n" -}}</code></pre>
+  </div>
+</div>

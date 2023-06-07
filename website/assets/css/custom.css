@@ -669,3 +669,25 @@ g.parallax4 {
   }
 }
 /* end front page divider */
+
+/* source toolbox */
+.doc .listingblock > .content {
+  position: relative;
+}
+
+.wide .doc .listingblock > .content {
+  margin-top: 0;
+}
+
+.doc .source-toolbox {
+  top: 1rem;
+}
+
+.doc .source-toolbox img.copy-icon {
+  -webkit-filter: invert(50.2%);
+  filter: invert(50.2%);
+}
+
+.doc .source-toolbox .copy-toast {
+  width: 4rem;
+}
