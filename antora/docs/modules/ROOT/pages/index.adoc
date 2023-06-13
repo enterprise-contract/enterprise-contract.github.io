@@ -7,11 +7,11 @@ security, and for the definition and enforcement of policies related to how
 container images are built and tested.
 
 Its main purpose is to verify the security and provenance of builds created by
-(codename) https://red-hat-stone-soup.pages.redhat.com/stonesoup-documentation/["Stonesoup"],
-a cloud based build and deployment system based on Tekton, Argo CD and
-OpenShift, currently under development by Red Hat.
+https://red.ht/trusted[Red Hat Trusted Application Pipeline] (RHTAP), a cloud
+based build and deployment system based on Tekton, Argo CD and OpenShift,
+provided by https://redhat.com[Red Hat].
 
-The Stonesoup build process uses https://tekton.dev/docs/chains/[Tekton Chains]
+The RHTAP build process uses https://tekton.dev/docs/chains/[Tekton Chains]
 to produce a signed https://in-toto.io/in-toto/[in-toto] attestation of the
 build pipeline. Enterprise Contract then uses that signed attestation to
 cryptographically verify that the build was not tampered with, and to check the
@@ -28,7 +28,7 @@ organization specific policies as required.
 
 There's an additional overview of Enterprise Contract and its components in the
 https://redhat-appstudio.github.io/book/book/enterprise-contract.html[Book of
-Stonesoup].
+AppStudio].
 
 == Code
 
