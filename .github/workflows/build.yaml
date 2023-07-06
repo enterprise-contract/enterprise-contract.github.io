@@ -59,8 +59,8 @@ jobs:
 
       - name: Build with Hugo
         env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
+          HUGO_ENVIRONMENT: ${{ github.event_name == 'pull_request' && 'development' || 'production'}}
+          HUGO_ENV: ${{ github.event_name == 'pull_request' && 'development' || 'production'}}
         run: |
           hugo \
             --source website \

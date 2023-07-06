@@ -2,10 +2,10 @@ const fs = require("fs");
 const toml = require("toml");
 
 module.exports = () => {
-  const filePath = "./hugo.toml";
+  const filePath = "./menu.toml";
   const fileContent = fs.readFileSync(filePath, "utf8");
   const config = toml.parse(fileContent);
-  const menu = config.menu.main || [];
+  const menu = config.main || [];
   const processed = new Set();
 
   const createMenu = (item) => {

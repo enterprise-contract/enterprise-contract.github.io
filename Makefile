@@ -3,7 +3,7 @@ help:
 	@grep '[[:space:]]##[[:space:]]' Makefile | sed 's/^\(.*\):.*##\(.*\)$$/#\2\nmake \1\n/'
 
 hugo-server: ## Run hugo server for website hacking
-	@cd website && hugo server --config hugo.toml
+	@cd website && hugo server
 
 preview: preview-antora hugo-server ## Run hugo server for website hacking with pre-built antora docs
 
@@ -22,10 +22,9 @@ build-antora: ## Build antora docs
 build-antora-fast: ## Build antora docs without re-fetching sources
 	@cd antora && npm run build:fast
 
-# Fixme: Not sure how to make the stylesheet and javascript urls work
 PWD=$(shell pwd)
 build-hugo: ## Build hugo docs
-	@cd website && hugo --config hugo.toml
+	@cd website && env HUGO_ENVIRONMENT=development hugo
 	@echo file://$(PWD)/public/index.html
 
 build-all: build-antora build-hugo
