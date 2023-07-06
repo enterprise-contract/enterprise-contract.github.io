@@ -1,0 +1,12 @@
+[[imports]]
+  path = 'github.com/basil/antora-default-ui-hugo-theme'
+
+[[imports]]
+path = "github.com/gohugoio/hugo-mod-heroicons"
+
+[[imports]]
+path = "github.com/faisalman/ua-parser-js"
+
+[[imports.mounts]]
+source = "src"
+target = "assets/js/vendor"
