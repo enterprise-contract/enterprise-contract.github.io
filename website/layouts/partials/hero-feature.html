@@ -1,0 +1,12 @@
+<div class="hero-feature">
+    <div class="hero-feature-icon">
+        {{ $icon := resources.Get (printf "svg/heroicons/24/outline/%s.svg" .icon) }}
+        {{ $icon.Content | safeHTML }}
+    </div>
+    <div class="hero-feature-details">
+        <h2>{{ .title }}</h2>
+        <p>
+            {{ .content }}
+        </p>
+    </div>
+</div>
