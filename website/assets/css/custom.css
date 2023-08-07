@@ -670,6 +670,10 @@ g.parallax4 {
 /* end front page divider */
 
 /* front page blog content */
+.blog-excerpts{
+  padding: 80px 20px 80px 20px;
+}
+
 .blog-excerpts>h2 {
   color: var(--ec-icon-purple);
   font-size: 1.9em;
@@ -715,7 +719,7 @@ ul.pagination
 
 /* front page contribute section */
 .contribute {
-  padding: 0 20px 0 20px;
+  padding: 80px 20px 80px 20px;
   text-align: center;
   margin: auto;
 }
