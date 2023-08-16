@@ -2,6 +2,3 @@
   [asciidocext.attributes]
     "icons" = "font"
     "source-highlighter" = "highlightjs"
-[highlight]
-  # Disable Goldmark Chroma syntax highlighter
-  codeFences = false

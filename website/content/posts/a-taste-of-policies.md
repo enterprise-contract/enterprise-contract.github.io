@@ -14,13 +14,13 @@ image was
 [built](https://github.com/lcarva/festoji/blob/848edc452ccbc6d42ec56c2807eef2f49e754c5e/.github/workflows/package.yaml)
 in a GitHub Workflow and was signed with the "keyless" sigstore workflow.
 
-{{<code bash>}}
+```bash
 IMAGE=quay.io/lucarval/festoji:latest
-{{</code>}}
+```
 
 For posterity, here is the version of the ec CLI used:
 
-{{<code bash>}}
+```bash
 $ ec version
 Version            v0.1.1857-b8f0da8
 Source ID          b8f0da8848c5230a46dc62e5aa3eab77b0085d75
@@ -33,17 +33,17 @@ Sigstore           v1.7.1
 Rekor              v1.2.2-0.20230530122220-67cc9e58bd23
 Tekton Pipeline    v0.47.0
 Kubernetes Client  v0.27.4
-{{</code>}}
+```
 
 The most basic verification we can do on this image is to verify its signature and signed SLSA
 Provenance were created by the expected identity:
 
-{{<code bash>}}
-ec validate image --policy '' --image $IMAGE \
+```bash
+$ ec validate image --policy '' --image $IMAGE \
   --certificate-identity-regexp='https:\/\/github\.com\/(slsa-framework\/slsa-github-generator|lcarva\/festoji)\/' \
   --certificate-oidc-issuer='https://token.actions.githubusercontent.com' \
   --output yaml
-{{</code>}}
+```
 
 A regular expression is needed for the certificate identity because the signature and the signed
 SLSA Provenance were created by different identities.
@@ -54,7 +54,7 @@ The verification above is useful, but we want more. We want to apply policy rule
 and to the SLSA Provenance. We also want to more easily specify the values for the certificate
 flags. Let's create a policy!
 
-{{<code yaml>}}
+```yaml
 ---
 identity:
   subjectRegExp: >-
@@ -78,7 +78,7 @@ sources:
 configuration:
   include:
     - github_certificate
-{{</code>}}
+```
 
 This policy moves the certificate flags to the policy itself. It also specifies certain policy rules
 to be executed. Here we are including some of the existing Enterprise Contract policy rules,
@@ -86,16 +86,16 @@ to be executed. Here we are including some of the existing Enterprise Contract p
 These policy rules rely on certain data to be provided, e.g. the expected GitHub Workflow
 repository. With this policy saved as `policy.yaml`, we can simplify how the CLI is invoked:
 
-{{<code bash>}}
-ec validate image --policy 'policy.yaml' --image $IMAGE --info --output yaml
-{{</code>}}
+```bash
+$ ec validate image --policy 'policy.yaml' --image $IMAGE --info --output yaml
+```
 
 The `--info` flag is used to display additional information about the policy rules, such as their
 descriptions.
 
 We can tweak the values of the `ruleData` in the policy to see what a failure would look like:
 
-{{<code yaml>}}
+```yaml
 violations:
 - metadata:
     code: github_certificate.gh_workflow_name
@@ -131,7 +131,7 @@ violations:
       to succeeded.
     title: GitHub Workflow Trigger
   msg: 'Trigger "push" not in allowed list: ["spam"]'
-{{</code>}}
+```
 
 As you can see, the Enterprise Contract provides a comprehensive list of all the identified
 violations.
@@ -142,7 +142,7 @@ In addition to the policy rules provide by the Enterprise Contract, it is also p
 own policy rules. The [festoji-policies](https://github.com/lcarva/festoji-policies) git repository
 illustrates this. It contains a very simple layout:
 
-{{<code bash>}}
+```bash
 $ tree
 .
 ├── LICENSE
@@ -150,11 +150,11 @@ $ tree
     └── github_slsa_provenance.rego
 
 2 directories, 2 files
-{{</code>}}
+```
 
 The important bits are in the rego file:
 
-{{<code rego>}}
+```rego
 # METADATA
 # title: GitHub SLSA Provenance
 # description: >-
@@ -180,7 +180,7 @@ deny contains result if {
 	count(match) == 0
 	result := "Unexpected materials"
 }
-{{</code>}}
+```
 
 This defines a single policy rule that verifies the materials section of the SLSA Provenance contain
 the expected git repository. The Enterprise Contract relies on rego annotations to provide
@@ -189,7 +189,7 @@ additional information about each of the policy rules. See the
 
 Let's add this rule to our previous policy:
 
-{{<code yaml>}}
+```yaml
 ---
 identity:
   subjectRegExp: >-
@@ -217,13 +217,13 @@ configuration:
   include:
     - github_certificate
     - github_slsa_provenance  # Also specify which custom policy rule to include.
-{{</code>}}
+```
 
 We can run the ec CLI again with this new policy. The default output should be the same. Let's use
 the flag `--show-successes` to ensure the custom policy rule was included:
 
-{{<code bash>}}
-$ 🐚 ec validate image --policy policy.yaml --image $IMAGE --info --output yaml --show-successes
+```bash
+$ ec validate image --policy policy.yaml --image $IMAGE --info --output yaml --show-successes
 […]
 - metadata:
     code: festoji.policies.github_slsa_provenance.materials
@@ -246,7 +246,7 @@ $ 🐚 ec validate image --policy policy.yaml --image $IMAGE --info --output yam
     title: GitHub Workflow Name
   msg: Pass
 […]
-{{</code>}}
+```
 
 Success!
 
