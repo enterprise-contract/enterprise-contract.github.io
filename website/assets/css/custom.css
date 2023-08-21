@@ -688,13 +688,13 @@ g.parallax4 {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 0 20px 0 20px;
   margin: 0;
 }
 
 .blog-excerpts>article.doc>article {
-  width: 500px;
+  width: 450px;
 }
+
 @media screen and (max-width: 1023px) {
   .blog-excerpts>article.doc>article {
     width: 100%;
