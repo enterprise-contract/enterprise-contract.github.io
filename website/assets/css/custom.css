@@ -739,6 +739,11 @@ ul.pagination
   margin: 0;
 }
 
+.contribute>p.ics-download {
+  text-align: right;
+  font-size: .5em;
+}
+
 @media screen and (max-width: 1023px) {
   .contribute img, .contribute img.icon{
     width: 100%;
