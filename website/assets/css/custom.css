@@ -292,6 +292,7 @@ p.big {
   font-family:Roboto;
   font-style:normal;
   font-weight:400;
+  font-display: swap;
   src:url(../font/roboto-latin-400-normal.woff2) format("woff2"),
   url(../font/roboto-latin-400-normal.woff) format("woff");
   unicode-range:U+00??,
@@ -316,6 +317,7 @@ p.big {
   font-family:Roboto;
   font-style:italic;
   font-weight:400;
+  font-display: swap;
   src:url(../font/roboto-latin-400-italic.woff2) format("woff2"),
   url(../font/roboto-latin-400-italic.woff) format("woff");
   unicode-range:U+00??,
@@ -340,6 +342,7 @@ p.big {
   font-family:Roboto;
   font-style:normal;
   font-weight:500;
+  font-display: swap;
   src:url(../font/roboto-latin-500-normal.woff2) format("woff2"),
   url(../font/roboto-latin-500-normal.woff) format("woff");
   unicode-range:U+00??,
@@ -364,6 +367,7 @@ p.big {
   font-family:Roboto;
   font-style:italic;
   font-weight:500;
+  font-display: swap;
   src:url(../font/roboto-latin-500-italic.woff2) format("woff2"),
   url(../font/roboto-latin-500-italic.woff) format("woff");
   unicode-range:U+00??,
@@ -388,6 +392,7 @@ p.big {
   font-family:Roboto Mono;
   font-style:normal;
   font-weight:400;
+  font-display: swap;
   src:url(../font/roboto-mono-latin-400-normal.woff2) format("woff2"),
   url(../font/roboto-mono-latin-400-normal.woff) format("woff");
   unicode-range:U+00??,
@@ -412,6 +417,7 @@ p.big {
   font-family:Roboto Mono;
   font-style:normal;
   font-weight:500;
+  font-display: swap;
   src:url(../font/roboto-mono-latin-500-normal.woff2) format("woff2"),
   url(../font/roboto-mono-latin-500-normal.woff) format("woff");
   unicode-range:U+00??,
