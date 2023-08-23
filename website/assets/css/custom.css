@@ -761,6 +761,10 @@ ul.pagination
   font-size: .5em;
 }
 
+#contrib-rocks {
+  padding: 2em 0 3em;
+}
+
 @media screen and (max-width: 1023px) {
   .contribute img, .contribute img.icon{
     width: 100%;
