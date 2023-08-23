@@ -9,6 +9,8 @@ post](https://enterprisecontract.dev/posts/introducing-the-enterprise-contract/)
 basic concepts of the Enterprise Contract. This time, we explore it further to showcase the usage of
 policies.
 
+<!--more-->
+
 Throughtout this post, we will use a container image from one of the author's side projects. This
 image was
 [built](https://github.com/lcarva/festoji/blob/848edc452ccbc6d42ec56c2807eef2f49e754c5e/.github/workflows/package.yaml)
