@@ -456,10 +456,20 @@ p.big {
   background-image: url("../images/logo-title.svg");
 }
 
+.hero-tagline {
+  text-align: center;
+  padding-top: 1em;
+  font-size: 110%;
+  font-style: italic;
+  color: var(--ec-navbar-purple);
+}
+
 .hero-intro {
   display: grid;
   text-align: center;
-  padding-left: 80px;
+  max-width: 35em;
+  margin: auto;
+  padding: 1em 1em 2.5em;
 }
 
 .hero-highlights {
@@ -540,6 +550,7 @@ a.all-downloads{
 
   .hero-intro {
     padding-left: 0;
+    max-width: 80%;
   }
 
   .hero-highlights {

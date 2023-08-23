@@ -11,9 +11,15 @@
         {{ partial "toolbar.html" . }}
         <div class="hero">
           <div class="hero-header"></div>
-          <div class="hero-intro">
-            <p>The Enterprise Contract is a set of tools for maintaining software supply chain security, and for the definition and enforcement of policies related to how container images are built and tested.</p>
+
+          <div class="hero-tagline">
+            <p>verify artifacts, enforce policies</p>
           </div>
+
+          <div class="hero-intro">
+            <p>Securely verify supply chain artifacts, and enforce policies about how they were built and tested, in a manageable, scalable, and declarative way.</p>
+          </div>
+
           <div class="hero-highlights">
             {{ partial "hero-feature.html" (dict
                 "icon" "wrench-screwdriver"
