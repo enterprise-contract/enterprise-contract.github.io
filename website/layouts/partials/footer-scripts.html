@@ -10,6 +10,4 @@
 </script>
 {{ $uaParser := resources.Get "js/vendor/ua-parser.min.js" | resources.Fingerprint }}
 <script src="{{ $uaParser.RelPermalink }}" {{ $uaParser.Data.Integrity | printf "integrity=%q" | safeHTMLAttr }}></script>
-{{ if not .Site.IsServer -}}
-  {{ template "_internal/google_analytics.html" . }}
-{{- end }}
+<script data-goatcounter="https://enterprise-contract.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
