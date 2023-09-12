@@ -20,6 +20,8 @@
             <p>Securely verify supply chain artifacts, and enforce policies about how they were built and tested, in a manageable, scalable, and declarative way.</p>
           </div>
 
+          <div class="hero-links">{{ .Content }}</div>
+
           <div class="hero-highlights">
             {{ partial "hero-feature.html" (dict
                 "icon" "wrench-screwdriver"
@@ -46,7 +48,6 @@
             ) }}
 
           </div>
-          <div class="hero-links">{{ .Content }}</div>
         </div>
         <div class="divider">
           {{ partial "svg-wave-divider.html"}}
