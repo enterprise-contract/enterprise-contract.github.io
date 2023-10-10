@@ -15,6 +15,8 @@
     --highlightjs-bg: #011627;
 
     --body-font-family: Roboto, sans-serif;
+
+    --doc-max-width--landing: calc(1024 / var(--rem-base) * 1rem);
 }
 
 :root.light {
@@ -124,10 +126,7 @@ code, kbd, pre {
  * fold
  */
 body.article {
-    display: grid;
-    align-items: stretch;
     height: 100%;
-    grid-template-rows: min-content auto 0;
 }
 
 .wide main .content {
@@ -441,8 +440,8 @@ p.big {
 
  /* begin index page hero section */
 .hero {
-  max-width: 1080px;
-  margin-top: 2em;
+  max-width: var(--doc-max-width--landing);
+  margin: 2rem auto;
   padding: 0 20px 0 20px;
   min-height: calc(100vh - 183px);
 }
@@ -689,6 +688,8 @@ g.parallax4 {
 /* front page blog content */
 .blog-excerpts{
   padding: 80px 20px 80px 20px;
+  margin: auto;
+  max-width: var(--doc-max-width--landing);
 }
 
 .blog-excerpts>h2 {
@@ -739,6 +740,7 @@ ul.pagination
   padding: 80px 20px 80px 20px;
   text-align: center;
   margin: auto;
+  max-width: var(--doc-max-width--landing);
 }
 
 .contribute h2 {
