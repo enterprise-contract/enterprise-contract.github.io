@@ -11,9 +11,9 @@
     "@enterprise-contract/ec-policies-antora-extension": "latest",
     "@enterprise-contract/reference-antora-extension": "latest",
     "@enterprise-contract/tekton-task-antora-extension": "latest",
+    "@release-engineering/ec-data-extension": "^1.0.1-test.0",
     "antora": "^3.1.4",
     "toml": "^3.0.0"
-
   },
   "overrides": {
     "glob-parent": "6.0.2"

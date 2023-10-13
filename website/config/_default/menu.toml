@@ -54,6 +54,12 @@
     weight = 70
 
   [[main]]
+    parent = 'Documentation'
+    name = 'Red Hat Policy configuration'
+    url = '/docs/rhtap-policy/'
+    weight = 80
+
+  [[main]]
     name = 'Source Code'
     url = 'https://github.com/enterprise-contract'
     weight = 13
