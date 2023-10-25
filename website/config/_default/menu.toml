@@ -55,7 +55,7 @@
 
   [[main]]
     parent = 'Documentation'
-    name = 'Red Hat Policy configuration'
+    name = 'Red Hat Policy Data'
     url = '/docs/rhtap-policy/'
     weight = 80
 
