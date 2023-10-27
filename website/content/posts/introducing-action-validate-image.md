@@ -4,7 +4,7 @@ date: 2023-10-24T13:02:00-04:00
 author: "Sean Conroy"
 ---
 
-Introducing Action Validate you may already be familiar 
+You may already be familiar 
 with using the `EC-CLI Validate` command for local container image validation. 
 Now, you can seamlessly integrate this functionality directly into your build 
 processes or any other automated workflow in GitHub.
