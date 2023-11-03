@@ -1,0 +1,23 @@
+<div class="github-repo">
+    <div class="name">
+        <h3>
+            <a href="{{ .repo_url }}">{{ partial "github-icon-svg.html" . }}
+                {{ .name }}
+            </a>
+        </h3>
+    </div>
+    <div class="details">
+        <p>
+            {{ if .description }}
+                {{ .description }}
+            {{ end }}
+        </p>
+        {{ if .issue_url }}
+            <a class="github-bugs" href="{{ .issue_url }}" title="Report an issue">{{ partial "bug-svg.html" . }}</a>
+        {{ end }}
+        {{ if .discussion_url }}
+            <a class="github-discuss" href="{{ .discussion_url }}" title="Join the discussion">{{ partial "chat-bubble-svg.html" . }}</a>
+        {{ end }}
+        </p>
+    </div>
+</div>
