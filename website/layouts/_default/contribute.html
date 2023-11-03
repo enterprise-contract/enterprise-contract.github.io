@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html{{ with .Site.LanguageCode }} lang="{{ . }}" {{ end }} class="light wide">
+
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+
+    <body class="article">
+        {{ partial "header.html" . }}
+        <div class="contact body">
+            {{ partial "nav.html" . }}
+            <main class="article">
+                {{ partial "toolbar.html" . }}
+                <div class="contribute">
+                    <h2>Collaboration is Welcomed!</h2>
+                    <p id="contrib-rocks"><a href="https://github.com/enterprise-contract/ec-cli/graphs/contributors"><img src="https://contrib.rocks/image?repo=enterprise-contract/ec-cli&columns=7&max=100"></a></p>
+                    <p>
+                        We encourage you to reach out and be part of our community.
+                    </p>
+                    <p>
+                        If you'd like to report an issue with the Enterprise Contract code, or if you have questions
+                        about the code, visit the appropriate GitHub repository:
+                    </p>
+                    <div class="github">
+                        <div class="github-repos">
+                            {{ partial "github-repo.html" (dict
+                            "name" "ec-cli"
+                            "description" "Enterprise Contract command line interface"
+                            "repo_url" "https://github.com/enterprise-contract/ec-cli"
+                            "issue_url" "https://github.com/enterprise-contract/ec-cli/issues"
+                            "discussion_url" "https://github.com/enterprise-contract/ec-cli/discussions"
+                            ) }}
+
+                            {{ partial "github-repo.html" (dict
+                            "name" "ec-policies"
+                            "description" "Rego policies related to RHTAP Enterprise Contract"
+                            "repo_url" "https://github.com/enterprise-contract/ec-policies"
+                            "issue_url" "https://github.com/enterprise-contract/ec-policies/issues"
+                            ) }}
+
+                            {{ partial "github-repo.html" (dict
+                            "name" "community"
+                            "description" "A repo for community utilization. If you're unsure where to open an issue, you can use this repository"
+                            "repo_url" "https://github.com/enterprise-contract/community"
+                            "issue_url" "https://github.com/enterprise-contract/community/issues"
+                            "discussion_url" "https://github.com/enterprise-contract/community/discussions"
+                            ) }}
+                        </div>
+                    </div>
+                    <div class="matrix">
+                        <a href="https://matrix.to/#/#enterprise-contract:matrix.org" title="Join the Enterprise-Contract room on Matrix.org">
+                            <div class="matrix-details">
+                                <div class="icon">
+                                    {{ partial "matrix-icon-svg.html" . }}
+                                </div>
+                                <div class="details">
+                                    Looking for real-time conversations about Enterprise Contract? Join the conversation
+                                    in our Matrix room.
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <p>Join us for our weekly community meeting, held every Wednesday at <a href="https://www.timeanddate.com/worldclock/converter.html?iso=20210518T140000&p1=1440&p2=4826&p3=234&p4=195" title="Find the meeting time in your local timezone">10am Eastern</a>.</p>
+                    <p>The meeting <a href="https://github.com/enterprise-contract/community/issues?q=is%3Aopen+is%3Aissue+label%3Acommunity-meeting+" title="View upcoming meeting agenda">agenda and joining details are available as a Github issue</a> shortly before the meeting. </p>
+                    <iframe src="https://calendar.google.com/calendar/embed?src=enterprisecontractcommunity%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                    <p class="ics-download">Download calendar .ics file <a href="https://calendar.google.com/calendar/ical/enterprisecontractcommunity%40gmail.com/public/basic.ics">here</a></p>
+
+                </div>
+                <div class="divider">
+                    {{ partial "svg-wave-divider.html"}}
+                </div>
+            </main>
+        </div>
+        {{ partial "footer.html" . }}
+    </body>
+
+    </html>
