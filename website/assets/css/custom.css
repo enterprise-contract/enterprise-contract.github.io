@@ -774,7 +774,7 @@ ul.pagination
   margin-right: auto;
 }
 
-.github-repos, .matrix {
+.github-repos, .slack {
   display: grid;
   gap: 10px;
 }
@@ -783,7 +783,7 @@ ul.pagination
   grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
 }
 
-.github-repo, .matrix-details {
+.github-repo, .slack-details {
   background-color: var(--ec-icon-purple);
   color: white;
   text-align: center;
@@ -823,31 +823,31 @@ ul.pagination
   flex-grow: 1; /* Allows growing to take up remaining space */
 }
 
-.matrix {
+.slack {
   text-align: left;
   margin-top: 20px;
   grid-template-columns: 1fr; /* Single column */
 }
 
-.matrix a {
+.slack a {
   color:#634f8b
 }
 
-.matrix-details:hover{
+.slack-details:hover{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Adds shadow */
 }
 
 
-.matrix-details {
+.slack-details {
   flex-direction: row;
 }
 
-.matrix-details .icon, .matrix-details .details{
+.slack-details .icon, .slack-details .details{
   flex: 1; /* Equal sizing */
   background-color: var(--ec-icon-purple)
 }
 
-.matrix-details .icon, .matrix-details .details {
+.slack-details .icon, .slack-details .details {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -856,18 +856,18 @@ ul.pagination
   padding-bottom: 20px;
 }
 
-.matrix-details .icon {
+.slack-details .icon {
   flex: 0 0 100px;
 }
 
-.matrix-details .details {
+.slack-details .details {
   background-color: #ffffff;
   color: #000000;
   padding: 5px
 }
-.matrix svg {
-  width: 60px;
-  height: 60px;
+.slack svg {
+  width: 80px;
+  height: 80px;
   color:#ffffff;
 }
 
