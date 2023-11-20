@@ -35,7 +35,7 @@ jobs:
     if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Download pull request artifact
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
@@ -79,7 +79,7 @@ jobs:
           npm --prefix code exec -- wrangler pages deploy public --project-name enterprise-contract --branch pr-${{ steps.data.outputs.PR_NUMBER }} | tee out.txt
           grep 'Deployment complete! Take a peek over at ' out.txt | sed -e 's/.*over at /PREVIEW_URL=/' >> $GITHUB_OUTPUT
       - name: Add comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
