@@ -12,7 +12,7 @@
     "@enterprise-contract/reference-antora-extension": "latest",
     "@enterprise-contract/tekton-task-antora-extension": "latest",
     "@release-engineering/ec-data-extension": "^1.0.1-test.0",
-    "antora": "^3.1.4",
+    "antora": "^3.1.5",
     "toml": "^3.0.0"
   },
   "overrides": {
