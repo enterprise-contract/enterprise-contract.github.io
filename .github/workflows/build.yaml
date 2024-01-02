@@ -83,7 +83,7 @@ jobs:
           mkdir pull_request
           echo ${{ github.event.pull_request.number }} > ./pull_request/number
       - name: Upload pull request data
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: .
           name: pull-request-data
