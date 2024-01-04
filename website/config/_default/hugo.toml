@@ -7,3 +7,7 @@ copyright = "Red Hat, Inc. All rights reserved."
 relativeURLs = true
 staticDir = ["static", "antora"]
 paginate = 2
+
+[services]
+  [services.rss]
+    limit = 10

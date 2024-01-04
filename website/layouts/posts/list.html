@@ -1,0 +1,38 @@
+{{ define "main" }}
+  <article>
+    <aside>
+      <h1>{{ .Title | markdownify }}</h1>
+      {{.Content }}
+      <p>
+        On this page:
+        <nav>
+          <ol>
+            {{ range .Paginator.Pages }}
+              <li><a href="#{{ .LinkTitle }}">{{ .LinkTitle }}</a></li>
+            {{ end }}
+          </ol>
+        </nav>
+      </p>
+      <p>
+        Other pages:
+        <div class="pagination-centered">
+          {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
+        </div>
+      </p>
+    </aside>
+  </article>
+  <article class="doc">
+    {{ range .Paginator.Pages }}
+    <article>
+      <h1><a id="{{ .LinkTitle }}" href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h1>
+        {{ partial "post-meta.html" . }}
+      <div class="paragraph">
+        <p>{{ .Content }}</p>
+      </div>
+
+      {{ $icon := resources.Get "svg/heroicons/24/outline/code-bracket.svg" }}
+      {{ $icon.Content | safeHTML }}
+    </article>
+    {{ end }}
+  </article>
+{{ end }}

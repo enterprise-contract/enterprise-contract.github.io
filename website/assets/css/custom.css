@@ -922,3 +922,55 @@ ul.pagination
 .doc .source-toolbox .copy-toast {
   width: 4rem;
 }
+
+body.posts > .body > .article > .content {
+  padding: 1rem;
+
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  aside {
+    position: fixed;
+    width: 20rem;
+    background: top / 40% no-repeat url('/images/logo.svg');
+    padding-top: 9rem;
+
+    h1 {
+      font-weight: normal;
+      color: var(--navbar-font-color);
+    }
+
+    nav ol {
+      list-style: none;
+      padding-left: 0.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  h1 {
+    a {
+      text-decoration: none;
+    }
+
+    font-size: 3rem;
+    border-bottom: 0;
+  }
+
+  article {
+    article:not(:first-child) {
+      margin-top: 6rem;
+    }
+
+    svg {
+      filter: drop-shadow(2px 2px 0 var(--ec-icon-purple));
+    }
+  }
+
+  article.doc {
+    margin-left: 23rem;
+  }
+}
