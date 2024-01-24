@@ -27,7 +27,7 @@ organization specific policies as required.
 - *EC Policies* - A set of policies defined in OPA/Rego
 
 There's an additional overview of Enterprise Contract and its components in the
-https://redhat-appstudio.github.io/book/book/enterprise-contract.html[Book of
+https://redhat-appstudio.github.io/architecture/architecture/enterprise-contract.html[Book of
 AppStudio].
 
 == Code
