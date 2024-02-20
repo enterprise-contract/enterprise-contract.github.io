@@ -7,17 +7,22 @@ security, and for the definition and enforcement of policies related to how
 container images are built and tested.
 
 Its main purpose is to verify the security and provenance of builds created by
-https://red.ht/trusted[Red Hat Trusted Application Pipeline] (RHTAP), a cloud
-based build and deployment system based on Tekton, Argo CD and OpenShift,
-provided by https://redhat.com[Red Hat].
+CI/CD systems such as https://github.com/konflux-ci[Konflux CI], (formerly
+https://github.com/redhat-appstudio/[Red Hat App Studio]),
+https://red.ht/trusted[Red Hat Trusted Application Pipeline] (RHTAP).
 
-The RHTAP build process uses https://tekton.dev/docs/chains/[Tekton Chains]
+The Konflux build process uses https://tekton.dev/docs/chains/[Tekton Chains]
 to produce a signed https://in-toto.io/in-toto/[in-toto] attestation of the
 build pipeline. Enterprise Contract then uses that signed attestation to
 cryptographically verify that the build was not tampered with, and to check the
 build against a set of xref:ec-policies:ROOT:index.adoc[policies]. The policies
 attest that the build process followed a prescribed set of best practices, plus
 organization specific policies as required.
+
+While Enterprise Contract was originally created to work with Tekton and Tekton
+Chains' attestations, it is flexible enough to be used with other CI/CD
+systems, for example
+https://github.com/enterprise-contract/action-validate-image[GitHub Actions].
 
 == Components
 
