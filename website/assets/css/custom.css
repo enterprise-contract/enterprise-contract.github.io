@@ -145,7 +145,7 @@ body.article {
 }
 
 .wide article.doc article {
-  margin-top: 3rem;
+  margin: 2rem 0 5rem 0;
 }
 
 footer.footer {
@@ -711,6 +711,8 @@ g.parallax4 {
 
 .blog-excerpts>article.doc>article {
   width: 450px;
+  padding: 0 1rem 0 4.5rem;
+  margin: 2rem 0 0 0; /* override margin set in `.wide article.doc article` */
 }
 
 @media screen and (max-width: 1023px) {

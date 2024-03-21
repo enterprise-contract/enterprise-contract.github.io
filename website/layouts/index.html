@@ -55,15 +55,20 @@
         <div class="blog-excerpts">
           <h2>Recently Published</h2>
           <article class="doc">
-            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-            {{ range ($paginator.Pages) }}
+            {{ $posts := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+            {{ range $posts.Limit 2 }}
               {{ partial "post-preview.html" . }}
             {{ end }}
 
+            {{/* This div is not really for pagination but the CSS does what we want and also I'm lazy */}}
+            <div class="pagination-centered">
+              <div class="pagination pagination-default" style="padding: 3em 0; opacity: 70%;">
+                {{/* Note the hard coded url here should match what's in website/config/_default/menu.toml) */}}
+                <a href="/posts">More articles &hellip;</a>
+              </div>
+            </div>
+
           </article>
-          <div class="pagination-centered">
-            {{ template "_internal/pagination.html" . }}
-          </div>
         </div>
         <div class="divider">
           {{ partial "svg-wave-divider.html"}}
