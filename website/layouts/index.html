@@ -60,6 +60,14 @@
               {{ partial "post-preview.html" . }}
             {{ end }}
 
+            {{/* This div is not really for pagination but the CSS does what we want and also I'm lazy */}}
+            <div class="pagination-centered">
+              <div class="pagination pagination-default" style="padding: 3em 0; opacity: 70%;">
+                {{/* Note the hard coded url here should match what's in website/config/_default/menu.toml) */}}
+                <a href="/posts">More articles &hellip;</a>
+              </div>
+            </div>
+
           </article>
         </div>
         <div class="divider">
