@@ -55,15 +55,12 @@
         <div class="blog-excerpts">
           <h2>Recently Published</h2>
           <article class="doc">
-            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-            {{ range ($paginator.Pages) }}
+            {{ $posts := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+            {{ range $posts.Limit 2 }}
               {{ partial "post-preview.html" . }}
             {{ end }}
 
           </article>
-          <div class="pagination-centered">
-            {{ template "_internal/pagination.html" . }}
-          </div>
         </div>
         <div class="divider">
           {{ partial "svg-wave-divider.html"}}
