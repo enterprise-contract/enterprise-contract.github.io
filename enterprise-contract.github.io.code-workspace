@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../ec-cli/reference-antora-extension"
+		},
+		{
+			"path": "../ec-cli/rego-antora-extension"
+		},
+		{
+			"path": "../ec-cli/tekton-task-antora-extension"
+		},
+		{
+			"path": "../ec-policies/antora/ec-policies-antora-extension"
+		}
+	],
+	"settings": {}
+}

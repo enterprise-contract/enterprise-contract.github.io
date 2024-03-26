@@ -22,7 +22,9 @@
   "scripts": {
     "build:base": "antora generate antora-playbook.yml",
     "build": "npm run build:base -- --clean --fetch",
-    "build:fast": "npm run build:base"
+    "build:fast": "npm run build:base",
+    "dev:links": "(cd ../../ec-policies/antora/ec-policies-antora-extension && npm ci && npm link) && (cd ../../ec-cli/reference-antora-extension && npm link) && (cd ../../ec-cli/rego-antora-extension && npm link) && (cd ../../ec-cli/tekton-task-antora-extension && npm link)",
+    "dev:setup": "npm run dev:links && npm link @enterprise-contract/ec-policies-antora-extension @enterprise-contract/reference-antora-extension @enterprise-contract/rego-antora-extension @enterprise-contract/tekton-task-antora-extension"
   },
   "engines": {
     "node": "18"
