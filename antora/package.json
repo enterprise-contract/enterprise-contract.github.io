@@ -9,7 +9,6 @@
   "homepage": "https://enterprise-contract.github.io/enterprise-contract.github.io/",
   "devDependencies": {
     "@enterprise-contract/ec-policies-antora-extension": "latest",
-    "@enterprise-contract/reference-antora-extension": "latest",
     "@enterprise-contract/rego-antora-extension": "latest",
     "@enterprise-contract/tekton-task-antora-extension": "latest",
     "@release-engineering/ec-data-extension": "^1.0.1-test.0",

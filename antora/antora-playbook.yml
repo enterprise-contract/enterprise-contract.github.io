@@ -59,7 +59,6 @@ antora:
     - require: '@enterprise-contract/ec-policies-antora-extension'
     - require: '@enterprise-contract/tekton-task-antora-extension'
     - require: '@enterprise-contract/rego-antora-extension'
-    - require: '@enterprise-contract/reference-antora-extension'
     - require: '@release-engineering/ec-data-extension'
     - '@antora/lunr-extension'
     - require: './extensions/zoom.js'
