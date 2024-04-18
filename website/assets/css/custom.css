@@ -924,3 +924,13 @@ ul.pagination
 .doc .source-toolbox .copy-toast {
   width: 4rem;
 }
+
+/* tabs */
+.tabs {
+  margin-top: 1rem;
+}
+
+.tablist > ul li {
+  border-radius: 3px;
+  border-color: var(--footer-background);
+}
