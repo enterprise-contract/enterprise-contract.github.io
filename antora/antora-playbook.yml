@@ -60,3 +60,6 @@ antora:
     - require: '@release-engineering/ec-data-extension'
     - '@antora/lunr-extension'
     - require: './extensions/zoom.js'
+asciidoc:
+  extensions:
+    - '@asciidoctor/tabs'

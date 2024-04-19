@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@antora/collector-extension": "^1.0.0-alpha.3",
-    "@antora/lunr-extension": "^1.0.0-alpha.8"
+    "@antora/lunr-extension": "^1.0.0-alpha.8",
+    "@asciidoctor/tabs": "^1.0.0-beta.6"
   }
 }
