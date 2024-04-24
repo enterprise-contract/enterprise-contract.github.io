@@ -52,11 +52,6 @@ output:
   dir: ../website/antora/docs
 antora:
   extensions:
-# Order here determines the order of execution, this is important for the
-# reference-antora-extension that operates on the files produced by
-# collector-extension
-    - '@antora/collector-extension'
-    - require: '@enterprise-contract/ec-policies-antora-extension'
     - require: '@release-engineering/ec-data-extension'
     - '@antora/lunr-extension'
     - require: './extensions/zoom.js'
