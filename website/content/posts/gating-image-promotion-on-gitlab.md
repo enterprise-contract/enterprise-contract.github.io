@@ -1,6 +1,6 @@
 ---
 title: "Gating Image Promotion on GitLab"
-date: 2024-06-12T18:64:00-00:00
+date: 2024-06-12T18:54:00-00:00
 author: "Luiz Carvalho"
 ---
 
