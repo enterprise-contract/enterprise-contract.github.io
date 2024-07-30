@@ -40,9 +40,6 @@ content:
       start_path: docs
     - url: https://github.com/enterprise-contract/user-guide.git
       branches: main
-    - url: https://github.com/release-engineering/rhtap-ec-policy.git
-      branches: main
-      start_path: docs
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
@@ -52,7 +49,6 @@ output:
   dir: ../website/antora/docs
 antora:
   extensions:
-    - require: '@release-engineering/ec-data-extension'
     - '@antora/lunr-extension'
     - require: './extensions/zoom.js'
 asciidoc:
