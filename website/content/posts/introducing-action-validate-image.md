@@ -4,9 +4,9 @@ date: 2023-10-24T13:02:00-04:00
 author: "Sean Conroy"
 ---
 
-You may already be familiar 
-with using the `EC-CLI Validate` command for local container image validation. 
-Now, you can seamlessly integrate this functionality directly into your build 
+You may already be familiar
+with using the `EC-CLI Validate` command for local container image validation.
+Now, you can seamlessly integrate this functionality directly into your build
 processes or any other automated workflow in GitHub.
 
 <!--more-->
@@ -19,12 +19,12 @@ processes or any other automated workflow in GitHub.
 
 - **GitHub Native**: Being a GitHub Action, EC Validate seamlessly integrates into your existing GitHub workflows, while also providing GitHub summary output.
 - **Policy Compliance**: Ability to tailor its validation checks based on custom or pre-defined policies.
-- **Integrity Checks**: Verifies that the image hasn't been tampered with. 
+- **Integrity Checks**: Verifies that the image hasn't been tampered with.
 - **[Signature Verification Support](https://enterprisecontract.dev/docs/ec-cli/main/signing.html)**: Offers support for verifying both long-lived public-key signed, and keyless signed container images.
-  
+
 Interested in learning more? Visit the EC Validate action in [GitHub's Market Place](https://github.com/marketplace/actions/ec-validate) for a user guide.
 
-## The `Golden-Container` Build Pipeline Example using EC Validate 
+## The `Golden-Container` Build Pipeline Example using EC Validate
 Imagine you're operating within a [build & release workflow](https://GitHub.com/enterprise-contract/golden-container/blob/main/.github/workflows/release.yaml). You've successfully set up a pipeline that takes care of building, digitally signing, generating an SBOM, and adding provenance data. However, you're missing a crucial step in validating the container image. This is where the `EC Validate` comes into play, ensuring your container images meet the required security and compliance standards before deployment.
 
 Now, let’s go over the initial steps of this workflow before actually diving into it.
@@ -56,7 +56,7 @@ We use Syft to generate a SBOM. It's then attested using Cosign.
 We employ SLSA tooling to generate provenance. This helps track the build process and adds traceability to the container image.
 ```yaml
 - name: slsa-github-generator
-  uses: slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v1.9.0 
+  uses: slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v1.9.0
   with:
     image: ${{ needs.build.outputs.image }}
     digest: ${{ needs.build.outputs.digest }}
@@ -69,7 +69,7 @@ We employ SLSA tooling to generate provenance. This helps track the build proces
 EC Action Validate works by assessing your container images against a set of validation checks. You can customize these checks through a policy to align with the specific security and compliance guidelines of your organization or industry. Whether the image passes or fails, you'll receive a GitHub summary output, and additional logs will be available in YAML format within the action.
 ```yaml
 - name: Validate image (keyless)
-  uses: enterprise-contract/action-validate-image@v1.0.31 
+  uses: enterprise-contract/action-validate-image@v1.0.31
   with:
     image: ${{ needs.build.outputs.image }}@${{ needs.build.outputs.digest }}
     identity: https:\/\/github\.com\/(slsa-framework\/slsa-github-generator|${{ github.repository_owner }}\/${{ github.event.repository.name }})\/
@@ -86,13 +86,13 @@ EC Action Validate works by assessing your container images against a set of val
 
 
 ### Promote Image
-Upon successful validation, this step promotes the image by pushing the latest validated tag. This ensures that only images that have passed checks are promoted. 
+Upon successful validation, this step promotes the image by pushing the latest validated tag. This ensures that only images that have passed checks are promoted.
 ```yaml
-- name: Push latest-validated image tag 
+- name: Push latest-validated image tag
   run: |
       skopeo copy \
-      --dest-creds=${{ github.actor }}:${{ github.token }} \       
-      docker://${{ needs.build.outputs.image }}@${{ needs.build.outputs.digest } \     
+      --dest-creds=${{ github.actor }}:${{ github.token }} \
+      docker://${{ needs.build.outputs.image }}@${{ needs.build.outputs.digest } \
       docker://${{ needs.build.outputs.image }}:latest
 ```
 
@@ -100,9 +100,9 @@ Upon successful validation, this step promotes the image by pushing the latest v
 Here is a version of the EC Action Validate that verifies artifacts signed by cosign with long-lived signing secrets. This method uses a public key, stored in a secret variable, to verify the image signature, thereby ensuring its integrity through a three-stage validation process: Signature Verification, Attestation Verification, and Policy Compliance.
 ```yaml
 - name: Validate image (long-lived)
-  uses: enterprise-contract/action-validate-image@v1.0.31 
+  uses: enterprise-contract/action-validate-image@v1.0.31
   with:
-    image: quay.io/redhat-appstudio/ec-golden-image:latest
+    image: quay.io/konflux-ci/ec-golden-image:latest
     key: ${{ vars.PUBLIC_KEY }}
     policy: github.com/enterprise-contract/config//slsa3
     extra-params: --ignore-rekor
