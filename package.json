@@ -8,7 +8,7 @@
   },
   "homepage": "https://enterprisecontract.dev",
   "engines": {
-    "node": "18"
+    "node": "20"
   },
   "devDependencies": {
     "wrangler": "^3.70.0"
