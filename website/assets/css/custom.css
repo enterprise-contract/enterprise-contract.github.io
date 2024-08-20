@@ -447,12 +447,12 @@ p.big {
 }
 
 .hero-header {
-  min-height: 120px;
+  min-height: 200px;
   background-size: contain;
   background-origin:content-box;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../images/logo-title.svg");
+  background-image: url("../images/logo-title-2.png");
 }
 
 .hero-tagline {
