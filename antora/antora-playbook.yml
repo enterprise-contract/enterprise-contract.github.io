@@ -20,8 +20,9 @@ runtime:
   log:
     failure_level: warn
 site:
-  title: Enterprise Contract
+  title: Conforma
   url: https://enterprisecontract.dev/docs
+  #url: https://conforma.dev/docs
   start_page: user-guide::index.adoc
   robots: allow
 content:

@@ -1,7 +1,7 @@
 {
   "name": "@enterprisecontract.dev/website",
   "version": "0.0.0",
-  "description": "Website for Enterprise Contract",
+  "description": "Website for Conforma (formerly Enterprise Contract)",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://issues.redhat.com/browse/HACBS"
