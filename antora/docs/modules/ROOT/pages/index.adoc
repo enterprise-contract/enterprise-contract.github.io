@@ -7,8 +7,7 @@ security, and for the definition and enforcement of policies related to how
 container images are built and tested.
 
 Its main purpose is to verify the security and provenance of builds created by
-CI/CD systems such as https://github.com/konflux-ci[Konflux CI], (formerly
-https://github.com/redhat-appstudio/[Red Hat App Studio]),
+CI/CD systems such as https://github.com/konflux-ci[Konflux CI] and
 https://red.ht/trusted[Red Hat Trusted Application Pipeline] (RHTAP).
 
 The Konflux build process uses https://tekton.dev/docs/chains/[Tekton Chains]
