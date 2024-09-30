@@ -1,6 +1,1 @@
 * xref:index.adoc[Overview]
-* xref:ec-cli:ROOT:ec_validate_image.adoc[CLI Reference]
-* xref:ec-cli:ROOT:verify-enterprise-contract.adoc[Tekton Tasks]
-* xref:ecc:ROOT:index.adoc[Configuration]
-* xref:ec-policies:ROOT:release_policy.adoc[Policies]
-* xref:user-guide:ROOT:index.adoc[User Guide]

@@ -934,3 +934,35 @@ ul.pagination
   border-radius: 3px;
   border-color: var(--footer-background);
 }
+
+/* Antora nav menu stuff */
+.nav-panel-menu .nav-item {
+  /* All top level titles */
+  &.component-title {
+    margin-bottom: 0.4rem;
+
+    >.nav-link {
+      font-size: 105%;
+    }
+  }
+
+  /* Expanded top level titles */
+  &.component-title.is-active {
+    margin-bottom: 0.8rem;
+  }
+
+  /* Higlighted top level titles */
+  &.component-title.is-current-path {
+    >.nav-link {
+      color: var(--ec-icon-purple);
+      font-weight: bold;
+    }
+  }
+
+  /* The current page */
+  &.is-current-page {
+    >.nav-link {
+      color: var(--ec-icon-purple);
+    }
+  }
+}
