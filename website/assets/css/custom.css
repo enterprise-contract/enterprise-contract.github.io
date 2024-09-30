@@ -934,3 +934,30 @@ ul.pagination
   border-radius: 3px;
   border-color: var(--footer-background);
 }
+
+/* Antora nav menu stuff */
+.nav-panel-menu .nav-item {
+  &[data-depth="0"] {
+    margin-bottom: 0.4rem;
+
+    >.nav-link {
+      font-size: 105%;
+    }
+  }
+
+  &[data-depth="0"].is-active {
+    margin-bottom: 0.8rem;
+
+    >.nav-link {
+      color: var(--ec-icon-purple);
+      font-weight: bold;
+    }
+  }
+
+  /* Current page anywhere */
+  &.is-current-page {
+    >.nav-link {
+      color: var(--ec-icon-purple);
+    }
+  }
+}

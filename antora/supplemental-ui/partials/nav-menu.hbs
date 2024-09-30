@@ -1,0 +1,20 @@
+{{!--
+  Include the navigation from every component instead of just the current one.
+  Default version is here:
+  https://gitlab.com/antora/antora-ui-default/-/blob/master/src/partials/nav-menu.hbs
+--}}
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <ul class="nav-list">
+      {{#each site.components}}
+        {{#with ./latest}}
+          <li class="nav-item" data-depth="0">
+            <button class="nav-item-toggle"></button>
+            <a class="nav-link" href="{{{relativize ./url}}}">{{./title}}</a>
+            {{> nav-tree navigation=./navigation level=1}}
+          </li>
+        {{/with}}
+      {{/each}}
+    </ul>
+  </nav>
+</div>
