@@ -963,6 +963,12 @@ ul.pagination
   &.is-current-page {
     >.nav-link {
       color: var(--ec-icon-purple);
+
+      &:after {
+        /* \00a0 is an &nbsp; char */
+        content: '\00a0→';
+        font-weight: bold;
+      }
     }
   }
 }
