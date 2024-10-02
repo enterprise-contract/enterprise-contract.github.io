@@ -22,13 +22,10 @@ runtime:
 site:
   title: Enterprise Contract
   url: https://enterprisecontract.dev/docs
-  start_page: ec::index.adoc
+  start_page: user-guide::index.adoc
   robots: allow
 content:
   sources:
-    - url: ../
-      start_path: antora/docs
-      branches: HEAD
     - url: https://github.com/enterprise-contract/ec-policies.git
       branches: main
       start_path: antora/docs

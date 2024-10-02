@@ -5,11 +5,10 @@ const objectValues = function (obj) {
 }
 
 const componentOrder = [
-  "ec",
+  "user-guide",
   "ec-cli",
   "ecc",
   "ec-policies",
-  "user-guide",
 ]
 
 const componentSorter = function (a, b) {
