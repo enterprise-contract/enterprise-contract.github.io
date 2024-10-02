@@ -971,4 +971,10 @@ ul.pagination
       }
     }
   }
+
+  /* The triangle expand/collapse indicator */
+  .nav-item-toggle {
+    /* For the rotate 90% */
+    transition: transform 0.1s ease;
+  }
 }
