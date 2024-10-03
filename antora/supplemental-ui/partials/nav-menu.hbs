@@ -10,7 +10,7 @@
         {{#with ./latest}}
           <li class="nav-item component-title">
             <button class="nav-item-toggle"></button>
-            <a class="nav-link" href="{{{relativize ./url}}}">{{./title}}</a>
+            <a class="nav-link" href="{{{relativize ./url}}}">{{componentTitle .}}</a>
             {{> nav-tree navigation=./navigation}}
           </li>
         {{/with}}
