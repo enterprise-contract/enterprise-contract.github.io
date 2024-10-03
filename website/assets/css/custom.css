@@ -17,6 +17,9 @@
     --body-font-family: Roboto, sans-serif;
 
     --doc-max-width--landing: calc(1024 / var(--rem-base) * 1rem);
+
+    /* Fill in the space left after removing the nav-explore section */
+    --nav-panel-menu-height: 100%;
 }
 
 :root.light {
