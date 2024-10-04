@@ -20,7 +20,7 @@ processes or any other automated workflow in GitHub.
 - **GitHub Native**: Being a GitHub Action, EC Validate seamlessly integrates into your existing GitHub workflows, while also providing GitHub summary output.
 - **Policy Compliance**: Ability to tailor its validation checks based on custom or pre-defined policies.
 - **Integrity Checks**: Verifies that the image hasn't been tampered with.
-- **[Signature Verification Support](https://enterprisecontract.dev/docs/ec-cli/main/signing.html)**: Offers support for verifying both long-lived public-key signed, and keyless signed container images.
+- **[Signature Verification Support](https://enterprisecontract.dev/docs/ec-cli/signing.html)**: Offers support for verifying both long-lived public-key signed, and keyless signed container images.
 
 Interested in learning more? Visit the EC Validate action in [GitHub's Market Place](https://github.com/marketplace/actions/ec-validate) for a user guide.
 
@@ -111,7 +111,7 @@ Here is a version of the EC Action Validate that verifies artifacts signed by co
 - **`image`**: Similar to keyless, specifies the container image to be validated.
 - **`key`**: The public key used for long-lived authentication.
 - **`policy`**: Policy configuration, which can be either [predefined](https://github.com/enterprise-contract/config) or custom.
-- **`extra-params`**: Additional parameters for the action, such as ignoring Rekor for this image. More can be found [here](https://enterprisecontract.dev/docs/ec-cli/main/ec_validate_image.html#_options)
+- **`extra-params`**: Additional parameters for the action, such as ignoring Rekor for this image. More can be found [here](https://enterprisecontract.dev/docs/ec-cli/ec_validate_image.html#_options)
 
 By using either keyless or long-lived authentication methods, you can tailor EC Action Validate to meet the specific security requirements of your project.
 

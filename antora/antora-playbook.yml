@@ -27,16 +27,16 @@ site:
 content:
   sources:
     - url: https://github.com/enterprise-contract/ec-policies.git
-      branches: main
       start_path: antora/docs
+
     - url: https://github.com/enterprise-contract/ec-cli.git
-      branches: main
       start_path: docs
+
     - url: https://github.com/enterprise-contract/enterprise-contract-controller.git
-      branches: main
       start_path: docs
+
     - url: https://github.com/enterprise-contract/user-guide.git
-      branches: main
+
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
