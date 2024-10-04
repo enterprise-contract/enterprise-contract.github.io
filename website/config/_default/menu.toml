@@ -18,40 +18,34 @@
     weight = 13
 
   [[main]]
+    name = 'User Guide'
     parent = 'Documentation'
-    name = 'Overview'
-    url = '/docs/ec/main'
+    url = '/docs/user-guide/main'
     weight = 10
 
   [[main]]
-    parent = 'Documentation'
     name = 'CLI Reference'
+    parent = 'Documentation'
     url = '/docs/ec-cli/main/ec_validate_image.html'
     weight = 20
 
   [[main]]
-    parent = 'Documentation'
     name = 'Tekton Tasks'
+    parent = 'Documentation'
     url = '/docs/ec-cli/main/verify-enterprise-contract.html'
     weight = 30
 
   [[main]]
-    parent = 'Documentation'
     name = 'Configuration'
+    parent = 'Documentation'
     url = '/docs/ecc/main'
     weight = 40
 
   [[main]]
-    parent = 'Documentation'
     name = 'Policies'
+    parent = 'Documentation'
     url = '/docs/ec-policies/release_policy.html'
     weight = 60
-
-  [[main]]
-    parent = 'Documentation'
-    name = 'User Guide'
-    url = '/docs/user-guide/main'
-    weight = 70
 
   [[main]]
     name = 'Source Code'
