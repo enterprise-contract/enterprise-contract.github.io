@@ -1,6 +1,6 @@
 baseURL = 'https://enterprise-contract.dev/'
 languageCode = 'en-us'
-title = 'Enterprise Contract'
+title = 'ecliptica'
 theme = 'github.com/basil/antora-default-ui-hugo-theme'
 publishDir = '../public'
 copyright = "Red Hat, Inc. All rights reserved."
