@@ -11,6 +11,8 @@ processes or any other automated workflow in GitHub.
 
 <!--more-->
 
+{{< conforma-name-preamble >}}
+
 ## What is EC Validate Action?
 
 **EC Validate** is a GitHub Action that brings validation capabilities of the Enterprise Contract CLI directly into your GitHub Workflow. Designed to integrate seamlessly into your build pipeline, this action offers both compliance assessments and integrity checks for your container images. It ensures that your images meet both organizational and industry standards before deployment or environment promotion.

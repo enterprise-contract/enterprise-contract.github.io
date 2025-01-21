@@ -13,6 +13,8 @@ assert the contents of *any* attestation format, even completely made up ones.
 
 <!--more-->
 
+{{< conforma-name-preamble >}}
+
 Before getting started, let's make sure we have an image that is already signed and has a SLSA
 Provenance attestation. We will also need access to the signing key used. The [Hitchhiker’s
 Guide](https://enterprisecontract.dev/docs/user-guide/hitchhikers-guide.html) walks through the

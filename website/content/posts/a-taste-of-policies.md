@@ -11,6 +11,8 @@ policies.
 
 <!--more-->
 
+{{< conforma-name-preamble >}}
+
 Throughtout this post, we will use a container image from one of the author's side projects. This
 image was
 [built](https://github.com/lcarva/festoji/blob/848edc452ccbc6d42ec56c2807eef2f49e754c5e/.github/workflows/package.yaml)

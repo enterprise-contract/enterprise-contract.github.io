@@ -10,6 +10,8 @@ built on those technologies.
 
 <!--more-->
 
+{{< conforma-name-preamble >}}
+
 ## Before starting…
 
 Let’s say you have an image, `quay.io/lucarval/demo:ec`, and you want to verify this image was signed
