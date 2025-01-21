@@ -1,12 +1,12 @@
 {
-  "name": "@enterprisecontract.dev/website",
+  "name": "@conforma.dev/website",
   "version": "0.0.0",
   "description": "Website for Conforma (formerly Enterprise Contract)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://issues.redhat.com/browse/HACBS"
+    "url": "https://issues.redhat.com/browse/EC"
   },
-  "homepage": "https://enterprisecontract.dev",
+  "homepage": "https://conforma.dev/",
   "engines": {
     "node": "20"
   },
