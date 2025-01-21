@@ -1,4 +1,4 @@
-# Enterprise Contract website
+# Conforma (formerly Enterprise Contract) website
 
 This directory contains the configuration needed by [Antora][antora] to render
 the content of the `docs` directory and documentation sources from other
