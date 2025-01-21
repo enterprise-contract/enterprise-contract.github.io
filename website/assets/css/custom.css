@@ -474,6 +474,16 @@ p.big {
   padding: 1em 1em 2.5em;
 }
 
+.hero-intro p.announcement {
+  margin-top: 2em;
+  padding: 1em;
+  border: solid 1px var(--ec-icon-purple);
+  border-radius: 0.25em;
+  font-style: italic;
+  font-size: 90%;
+  color: var(--ec-icon-purple);
+}
+
 .hero-highlights {
   display: grid;
   grid-template-columns: auto auto;
