@@ -74,9 +74,10 @@ jobs:
         id: preview
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
         run: |
           npm --prefix code ci
-          npm --prefix code exec -- wrangler pages deploy public --project-name enterprise-contract --branch pr-${{ steps.data.outputs.PR_NUMBER }} | tee out.txt
+          npm --prefix code exec -- wrangler pages deploy public --project-name "$CLOUDFLARE_PROJECT_NAME" --branch pr-${{ steps.data.outputs.PR_NUMBER }} | tee out.txt
           grep 'Deployment complete! Take a peek over at ' out.txt | sed -e 's/.*over at /PREVIEW_URL=/' >> $GITHUB_OUTPUT
       - name: Add comment
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
