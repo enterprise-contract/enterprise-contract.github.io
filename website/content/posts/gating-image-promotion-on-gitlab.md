@@ -10,6 +10,8 @@ achieve this in a [GitLab] pipeline.
 
 <!--more-->
 
+{{< conforma-name-preamble >}}
+
 > See the [appendix](#appendix) section for the full example.
 
 Consider a simple [.gitlab-ci.yaml] file:

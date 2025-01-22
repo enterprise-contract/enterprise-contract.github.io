@@ -1,15 +1,18 @@
 
-# enterprise-contract.github.io
+# conforma.github.io
 
-These are the sources for building the https://enterprisecontract.dev website.
+These are the sources for building the [conforma.dev][conforma] website.
 The website uses [Hugo](https://gohugo.io/) and
 [Antora](https://docs.antora.org/) to build different sections of the website.
 
 Includes:
-* [Website content](./website), built with [Hugo](https://gohugo.io/), published at [enterprisecontract.dev][ec]
-* [Documentation](./antora), built with [Antora](https://antora.org/), published
-  at [enterprisecontract.dev/docs][ec-docs]
 
+* [Website content](./website),
+    built with [Hugo](https://gohugo.io/),
+    published at [conforma.dev][conforma]
+* [Documentation](./antora),
+    built with [Antora](https://antora.org/),
+    published at [conforma.dev/docs][conforma-docs]
 
 ## Live reload preview
 
@@ -36,11 +39,10 @@ extensions are [linked](https://docs.npmjs.com/cli/v6/commands/npm-link), so
 instead of the versions released to npmjs.com, local versions with any local
 changes will be used.
 
-Opening the `enterprise-contract.github.io.code-workspace` workspace file within
+Opening the `conforma.github.io.code-workspace` workspace file within
 VSCode will load the Node projects of the same extensions and the `Antora Build`
 launch configuration in `.vscode/launch.json` allows running the debugger
 against those.
 
-
-[ec]: https://enterprisecontract.dev
-[ec-docs]: https://enterprisecontract.dev/docs
+[conforma]: https://conforma.dev
+[conforma-docs]: https://conforma.dev/docs
