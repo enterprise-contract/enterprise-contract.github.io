@@ -7,7 +7,7 @@ author: "Luiz Carvalho"
 Attestations are a wonderful way to attach metadata to container images in a secure manner. One of
 the most popular formats is [SLSA Provenance](https://slsa.dev/spec/v0.1/provenance#schema) which is
 used to provide information on how the image was created. Our [Hitchhiker’s
-Guide](https://enterprisecontract.dev/docs/user-guide/hitchhikers-guide.html) demonstrates how
+Guide](https://conforma.dev/docs/user-guide/hitchhikers-guide.html) demonstrates how
 to write policies to assert the contents of the SLSA Provenance. Here, we expand on that approach to
 assert the contents of *any* attestation format, even completely made up ones.
 
@@ -17,7 +17,7 @@ assert the contents of *any* attestation format, even completely made up ones.
 
 Before getting started, let's make sure we have an image that is already signed and has a SLSA
 Provenance attestation. We will also need access to the signing key used. The [Hitchhiker’s
-Guide](https://enterprisecontract.dev/docs/user-guide/hitchhikers-guide.html) walks through the
+Guide](https://conforma.dev/docs/user-guide/hitchhikers-guide.html) walks through the
 process. If you want to try out the commands in this blog post, start there.
 
 When we talk about different attestation formats, what we are really saying is different **predicate
@@ -111,7 +111,7 @@ _bacon_attestations := [attestation |
 ]
 ```
 
-(Check out the [docs](https://enterprisecontract.dev/docs/ec-policies/authoring.html) for more
+(Check out the [docs](https://conforma.dev/docs/ec-policies/authoring.html) for more
 information on how to author policy rules 🔥)
 
 Next, we create a policy configuration, `policy.yaml`, to use the policy rules above.
