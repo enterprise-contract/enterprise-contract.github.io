@@ -296,7 +296,7 @@ GitLab.
 [GitLab container registry]: https://docs.gitlab.com/ee/user/packages/container_registry/
 [identity-based]: https://docs.sigstore.dev/signing/overview/
 [SLSA Provenance]: https://slsa.dev/spec/v1.0/
-[slsa_source_correlated]: https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa_source_correlated_package
+[slsa_source_correlated]: https://conforma.dev/docs/ec-policies/release_policy.html#slsa_source_correlated_package
 
 ## Appendix
 
